@@ -1,0 +1,156 @@
+[
+    {
+        "plt_ingredients_id":"g535gggg5g axwww3q2",
+        "plt_name":"Espaguetis a la carbonara",
+        "plt_description":"Pasta italiana con una salsa cremosa a base de huevos, queso parmesano, panceta o bacon, y pimienta negra.",
+        "plt_price":41.18,
+        "plt_info":"Espaguetis, huevo, panceta, queso parmesano, pimienta negra.",
+        "plt_type":"lauch",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"786-44",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397593\/dataset_images\/005\/plate_1714397585\/pzfih7k4b7cp58sb39oo.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 7i86ioo9",
+        "plt_name":"Paella valenciana",
+        "plt_description":"Plato espa\u00f1ol de arroz cocido con azafr\u00e1n, pollo, conejo, verduras como jud\u00edas verdes y tomate, y a veces mariscos.",
+        "plt_price":950.82,
+        "plt_info":"Arroz, pollo, conejo, jud\u00edas verdes, tomate, azafr\u00e1n, caldo de pollo, aceite de oliva.",
+        "plt_type":"lauch",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"738-40",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397594\/dataset_images\/005\/plate_1714397585\/hek4bsjvb4j9lymwg72s.webp"
+    },
+    {
+        "plt_ingredients_id":"e3qr3333333 7i86ioo9 w3334r4r3t5",
+        "plt_name":"Sushi de salm\u00f3n",
+        "plt_description":"Preparaci\u00f3n japonesa de arroz y salm\u00f3n crudo enrollados en algas nori.",
+        "plt_price":345.27,
+        "plt_info":"Salm\u00f3n fresco, arroz para sushi, alga nori, vinagre de arroz, az\u00facar, sal.",
+        "plt_type":"Dessert",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"444-73",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397588\/dataset_images\/005\/plate_1714397585\/pmrmx3fjvtnffkkrflxt.webp"
+    },
+    {
+        "plt_ingredients_id":"rerererere3 7i86ioo9 o9888888889o89",
+        "plt_name":"Pollo al curry",
+        "plt_description":"Plato de pollo cocido en una salsa de curry, t\u00edpicamente servido con arroz.",
+        "plt_price":557.71,
+        "plt_info":"Pollo, cebolla, tomate, leche de coco, curry en polvo, aceite, especias.",
+        "plt_type":"Dessert",
+        "plt_origen":"Latino",
+        "plt_company_id":"960-38",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397588\/dataset_images\/005\/plate_1714397585\/pmrmx3fjvtnffkkrflxt.webp"
+    },
+    {
+        "plt_ingredients_id":"axwww3q2",
+        "plt_name":"Ensalada C\u00e9sar",
+        "plt_description":"Ensalada tradicionalmente hecha con lechuga romana, aderezo C\u00e9sar, crotones y queso parmesano.",
+        "plt_price":127.38,
+        "plt_info":"Lechuga romana, pollo asado, crutones, queso parmesano, aderezo C\u00e9sar.",
+        "plt_type":"dinner",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"297-85",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397589\/dataset_images\/005\/plate_1714397585\/ywdvkfv7lbu4cuvw0sd3.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 7i86ioo9",
+        "plt_name":"Tacos al pastor",
+        "plt_description":"Tacos mexicanos rellenos de carne de cerdo marinada con especias y asada en trompo.",
+        "plt_price":663.1,
+        "plt_info":"Carne de cerdo marinada, pi\u00f1a, cebolla, cilantro, tortillas de ma\u00edz.",
+        "plt_type":"lauch",
+        "plt_origen":"Italiana",
+        "plt_company_id":"733-32",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397589\/dataset_images\/005\/plate_1714397585\/ywdvkfv7lbu4cuvw0sd3.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 axwww3q2",
+        "plt_name":"Risotto de champi\u00f1ones",
+        "plt_description":"Arroz italiano cocido lentamente con caldo y champi\u00f1ones, queso parmesano y mantequilla.",
+        "plt_price":804.18,
+        "plt_info":"Arroz Arborio, champi\u00f1ones, caldo de verduras, vino blanco, queso parmesano.",
+        "plt_type":"Dessert",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"839-98",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397589\/dataset_images\/005\/plate_1714397585\/ywdvkfv7lbu4cuvw0sd3.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 w43rrrrrrrrrrr4 7i86ioo9",
+        "plt_name":"Lomo saltado",
+        "plt_description":"Plato peruano de carne de res salteada con cebolla, tomate, pimientos y sazonada con especias y salsa de soja.",
+        "plt_price":113.49,
+        "plt_info":"Lomo de res, cebolla, tomate, aj\u00ed amarillo, salsa de soja, vinagre, papas fritas.",
+        "plt_type":"lauch",
+        "plt_origen":"Africana",
+        "plt_company_id":"680-69",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397593\/dataset_images\/005\/plate_1714397585\/pzfih7k4b7cp58sb39oo.webp"
+    },
+    {
+        "plt_ingredients_id":"w3433rf5e g535gggg5g 7i86ioo9 w3334r4r3t5",
+        "plt_name":"Tortilla espa\u00f1ola",
+        "plt_description":"Tortilla de huevos, patatas y cebolla, a menudo servida como tapa en Espa\u00f1a.",
+        "plt_price":75.57,
+        "plt_info":"Patatas, huevos, cebolla, aceite de oliva, sal.",
+        "plt_type":"dinner",
+        "plt_origen":"Italiana",
+        "plt_company_id":"088-21",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397593\/dataset_images\/005\/plate_1714397585\/pzfih7k4b7cp58sb39oo.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 7i86ioo9 rerererere3 w3334r4r3t5",
+        "plt_name":"Pescado a la plancha",
+        "plt_description":"Pescado cocinado a la parrilla o plancha con aceite de oliva y hierbas.",
+        "plt_price":300.64,
+        "plt_info":"Filete de pescado, aceite de oliva, lim\u00f3n, sal, pimienta.",
+        "plt_type":"lauch",
+        "plt_origen":"Europea",
+        "plt_company_id":"653-67",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397591\/dataset_images\/005\/plate_1714397585\/xzp0losofal4kfpuz4kz.webp"
+    },
+    {
+        "plt_ingredients_id":"rerererere3 w43rrrrrrrrrrr4",
+        "plt_name":"Ceviche peruano",
+        "plt_description":"Preparaci\u00f3n de pescado crudo marinado en jugo de lim\u00f3n con cebolla, aj\u00ed y cilantro.",
+        "plt_price":728.2,
+        "plt_info":"Pescado blanco fresco, lim\u00f3n, cebolla roja, aj\u00ed amarillo, cilantro, ma\u00edz, camote.",
+        "plt_type":"lauch",
+        "plt_origen":"Africana",
+        "plt_company_id":"092-71",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397588\/dataset_images\/005\/plate_1714397585\/pmrmx3fjvtnffkkrflxt.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 axwww3q2 axwww3q2",
+        "plt_name":"Lasagna bolognesa",
+        "plt_description":"Capas de pasta, salsa de carne bolo\u00f1esa, queso ricotta y mozzarella, horneadas.",
+        "plt_price":85.72,
+        "plt_info":"Pasta para lasa\u00f1a, carne molida, salsa de tomate, queso mozzarella, queso parmesano.",
+        "plt_type":"Dessert",
+        "plt_origen":"Asi\u00e1tica",
+        "plt_company_id":"086-81",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397589\/dataset_images\/005\/plate_1714397585\/ywdvkfv7lbu4cuvw0sd3.webp"
+    },
+    {
+        "plt_ingredients_id":"7i86ioo9 g53533333333223 w43rrrrrrrrrrr4 w3334r4r3t5",
+        "plt_name":"Filete mignon",
+        "plt_description":"Corte de carne de ternera tierno y jugoso, a menudo servido con salsa.",
+        "plt_price":578.95,
+        "plt_info":"Filete de ternera, mantequilla, ajo, sal, pimienta.",
+        "plt_type":"Dessert",
+        "plt_origen":"Africana",
+        "plt_company_id":"254-00",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397594\/dataset_images\/005\/plate_1714397585\/hek4bsjvb4j9lymwg72s.webp"
+    },
+    {
+        "plt_ingredients_id":"hhth55y56uh6",
+        "plt_name":"Tarta de manzana",
+        "plt_description":"Postre de masa quebrada con relleno de manzanas caramelizadas y canela.",
+        "plt_price":244.55,
+        "plt_info":"Manzanas, az\u00facar, canela, masa para tarta, mantequilla.",
+        "plt_type":"lauch",
+        "plt_origen":"Africana",
+        "plt_company_id":"632-77",
+        "plt_image":"https:\/\/res.cloudinary.com\/dhhucazdj\/image\/upload\/v1714397589\/dataset_images\/005\/plate_1714397585\/ywdvkfv7lbu4cuvw0sd3.webp"
+    }
+]

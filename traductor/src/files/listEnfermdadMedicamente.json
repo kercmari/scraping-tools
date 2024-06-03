@@ -1,0 +1,139 @@
+[
+    {
+      "illness": "Mental breakdowns",
+      "medications": "Antidepressants, Mood Stabilizers, Antipsychotics"
+    },
+    {
+      "illness": "Anxiety",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications"
+    },
+    {
+      "illness": "Panic attacks",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications, Opioid Analgesics"
+    },
+    {
+      "illness": "Depression",
+      "medications": "Antidepressants, Mood Stabilizers"
+    },
+    {
+      "illness": "ADHD",
+      "medications": "Mood Stabilizers, ADHD Medications"
+    },
+    {
+      "illness": "Hypo bipolar disorder",
+      "medications": "Mood Stabilizers"
+    },
+    {
+      "illness": "Major depressive disorder",
+      "medications": "Antidepressants"
+    },
+    {
+      "illness": "General anxiety disorder",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications"
+    },
+    {
+      "illness": "Autism spectrum disorder",
+      "medications": "Mood Stabilizers"
+    },
+    {
+      "illness": "Suicidal ideation",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Skin breaking out, scratching scalp, bouncing leg",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Unable to get up and perform tasks with ease",
+      "medications": "Antidepressants, Mood Stabilizers"
+    },
+    {
+      "illness": "Loss of concentration",
+      "medications": "Mood Stabilizers, ADHD Medications"
+    },
+    {
+      "illness": "Difficulty managing thoughts",
+      "medications": "Antidepressants, Mood Stabilizers"
+    },
+    {
+      "illness": "Manic episodes",
+      "medications": "Mood Stabilizers, Antipsychotics"
+    },
+    {
+      "illness": "Chronic anxiety",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications"
+    },
+    {
+      "illness": "Contamination fear",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Self-harm",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Eating disorders",
+      "medications": "Antidepressants, Mood Stabilizers, Sleep Medications"
+    }, 
+    {
+      "illness": "Depressive",
+      "medications": "Antidepressants"
+    },
+    {
+      "illness": "Anxiety",
+      "medications": "Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Panic",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications, Opioid Analgesics"
+    },
+    {
+      "illness": "ADHD",
+      "medications": "Mood Stabilizers, ADHD Medications"
+    },
+    {
+      "illness": "Bipolar",
+      "medications": "Mood Stabilizers, Antipsychotics"
+    },
+    {
+      "illness": "Autism",
+      "medications": "Mood Stabilizers"
+    },
+    {
+      "illness": "Suicidal",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Insomnia",
+      "medications": "Sleep Medications"
+    },
+    {
+      "illness": "Skin",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Concentration",
+      "medications": "Mood Stabilizers, ADHD Medications"
+    },
+    {
+      "illness": "Manic",
+      "medications": "Mood Stabilizers, Antipsychotics"
+    },
+    {
+      "illness": "Chronic",
+      "medications": "Anxiolytics or Benzodiazepines, Sleep Medications"
+    },
+    {
+      "illness": "Contamination",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Self-harm",
+      "medications": "Antidepressants, Anxiolytics or Benzodiazepines"
+    },
+    {
+      "illness": "Eating",
+      "medications": "Antidepressants, Mood Stabilizers"
+    }
+  ]
+  
