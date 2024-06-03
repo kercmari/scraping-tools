@@ -1,7 +1,9 @@
 requests==2.26.0
 selenium==4.21.0
 webdriver_manager==4.0.1
-pandas==2.2.2
+pandas==1.4.4
 faker==0.7.4
 fuzzywuzzy==0.18.0
 python-Levenshtein==0.25.1
+googletrans==3.0.0
+deep_translator==1.11.4

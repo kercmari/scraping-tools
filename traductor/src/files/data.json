@@ -1,0 +1,13 @@
+{
+    "name": "John",
+    "age": 30,
+    "cars": [
+        {"model": "Ford", "mpg": 25.5},
+        {"model": "BMW", "mpg": 29.5}
+    ],
+    "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zipcode": "10001"
+    }
+}

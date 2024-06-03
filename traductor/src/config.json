@@ -1,13 +1,10 @@
 [
     {
-        "key_type": "string",
-        "key_prop": "illness",
-        "split_key": " ",
-        "value_prop": "medications", 
-        "info_key": "pat_clinicHistory2",
-        "update_key": "med_typeMedication",
-        "data_ids_path": "listEnfermdadMedicamente.json",
-        "update_data_path": "pacientes2.json" 
+        "src_language": "en",
+        "dest_language": "es",
+        "exclude_properties": ["zipcode", "model"],
+        "exclude_types": ["int", "list"], 
+        "update_data_path": "data.json"
     }
 
 ]

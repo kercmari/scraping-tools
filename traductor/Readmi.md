@@ -8,6 +8,8 @@ En caso de no tener permisos
 
 `Set-ExecutionPolicy RemoteSigned`
 
+Instalar librerias 
+`pip install -r requirements.txt `
 Para compilar el codigo 
 `python src/app.py`
 
