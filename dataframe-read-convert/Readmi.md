@@ -17,13 +17,57 @@ Para compilar el codigo
 
 ```json
  {
-        "key_type": "string o array", //Tipo de concatenacion para la nueva data Ej "32323-5454 o  ['43434','322332']"
-        "key_prop": "illness", //Variable de listado de IDs que se usara como comparacion
-        "split_key": " ", //Key word para separar los IDs
-        "value_prop": "", //Valor a ser concatendo o agrupado , es decir quien contiene los IDs 
-        "info_key": "", //Valor del set de datos donde se saca la informacion o el contexto
-        "update_key": "", //Key porpertie a modificar, es decir la que va a ser afectada con los IDs
-        "data_ids_path": "listEnfermdadMedicamente.json", //nombre del archivo de la lista de Ids 
-        "update_data_path": "pacientes2.json" //nombre del archivo de la data actualizar
-    }
+    "estructura_estandar": [
+        "gender",
+        "country"
+    ], //Columnas finales del documento o tabla de interes
+    
+    "dataframes": [
+        {
+            "rename": {
+                "name": "prodName",
+                "actual_price": "prodPrice"
+            }, // Objeto clave-valor, la clave es la columnas del documento actual, valor son las columnas que van a ser usadas en el documento final
+            "type_data": [
+                {
+                "name": "prodPrice",
+                "type": "string"
+                },
+                {
+                    "name": "prodRating",
+                    "type": "string"
+                }
+            ], //Lista de tipo de dato como se requiera el documento final
+            "count_row": 20, //canitdad de elementos tomados del input file
+            "data_path": "amazon.csv", //Nombre del input file
+            "properties_default": [
+                
+                {
+                    "name": "comName",
+                    "type": "string",
+                    "value": "Amazon"
+                }, //esta configuracion se establece el nombre de la columna donde se define un valor por defecto para todas las rows, el key clave es "value"
+                {
+                    "name": "gender",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Male",
+                        "Female"
+            
+                    ]
+                }, //esta configuracion se establece el nombre de la columna donde se define un randon por defecto para todas las rows, el key clave es "function"   y    "values"  , donde values esta soportado para N elementos       
+                {
+                    "name": "offerPrice",
+                    "type": "string",
+                    "list_column": ["offerName", "prodPrice"],
+                    "function": "multiplication",
+                    "factor":0.01
+                    
+                }//esta configuracion se establece el nombre de la columna donde se define un una funcion operecion  por defecto para todas las rows, el key clave es "function" ,    "factor"  y "list_column" , list_column esta soportado para dos elemento 
+            ] //Lista de properties generadas por defecto o ramdom
+        }
+    ]
+}
+    
 ```
