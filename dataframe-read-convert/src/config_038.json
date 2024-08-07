@@ -1,0 +1,269 @@
+{
+    "estructura_estandar": [
+        "gender",
+        "country",
+        "comName",
+        "prodName",
+        "prodStatus",
+        "prodPrice",
+        "prodRating",
+        "serName",
+        "serPrice",
+        "serRating",
+        "offerName",
+        "offerStatus",
+        "offerPrice",
+        "offerRating"
+    ],
+    "dataframes": [
+        {
+            "rename": {
+                "name": "prodName",
+                "actual_price": "prodPrice",
+                "ratings": "prodRating",
+                "discount": "offerName",
+                "discount_price": "offerPrice"
+            },
+            "type_data": [
+                {
+                "name": "prodPrice",
+                "type": "string"
+                },
+                {
+                    "name": "prodRating",
+                    "type": "string"
+                },
+                {
+                    "name": "offerName",
+                    "type": "string"
+                },
+                {
+                    "name": "offerPrice",
+                    "type": "string"
+                }
+            ],
+            "count_row": 20,
+            "data_path": "amazon.csv",
+            "properties_default": [
+                
+                {
+                    "name": "comName",
+                    "type": "string",
+                    "value": "Amazon"
+                },
+                {
+                    "name": "gender",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Male",
+                        "Female"
+            
+                    ]
+                },
+                {
+                    "name": "country",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Estados Unidos",
+                        "Canadá",
+                        "Reino Unido",
+                        "Alemania",
+                        "Francia",
+                        "Italia",
+                        "España",
+                        "Países Bajos",
+                        "Suecia",
+                        "Australia",
+                        "Japón",
+                        "India",
+                        "Brasil",
+                        "México"
+                    ]
+                },
+                {
+                    "name": "prodStatus",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Active",
+                        "Inactive",
+                        "Pending"
+                    ]
+                },
+                {
+                    "name": "serName",
+                    "type": "string",
+                    "function": "random",
+                    "values": ["Prime", "Prime Now", "Same-Day Delivery", "One-Day Delivery", "Two-Day Delivery", "Amazon Fresh", "Amazon Pantry", "Amazon Hub Locker", "Amazon Hub Counter", "Amazon Hub Locker+"]
+                },
+                {
+                    "name": "serPrice",
+                    "type": "string",
+                    "function": "random",
+                    "values": [99, 0, 5.99, 3.99, 0, 14.99, 4.99, 0, 0, 0]
+                },
+                {
+                    "name": "serRating",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
+                },
+                {
+                    "name": "offerStatus",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Available",
+                        "Sold Out",
+                        "Coming Soon"
+                    ]
+                },
+                {
+                    "name": "offerRating",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
+                }
+            
+            ]
+        },
+        {
+            "rename": {
+                "storename": "comName",
+                "title": "prodName",
+                "price": "prodPrice",
+                "rating": "prodRating",
+                "discount": "offerName"
+            },
+            "count_row": 130,
+            "data_path": "parte15.csv",
+            "properties_default": [
+                
+                {
+                    "name": "gender",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Male",
+                        "Female"
+            
+                    ]
+                },
+                {
+                    "name": "country",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Alemania",
+                        "Austria",
+                        "Bélgica",
+                        "Chipre",
+                        "Eslovaquia",
+                        "Eslovenia",
+                        "España",
+                        "Estonia",
+                        "Finlandia",
+                        "Francia",
+                        "Grecia",
+                        "Irlanda",
+                        "Italia",
+                        "Letonia",
+                        "Lituania",
+                        "Luxemburgo",
+                        "Malta",
+                        "Países Bajos",
+                        "Portugal"
+                    ]
+                },
+                {
+                    "name": "prodStatus",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Active",
+                        "Inactive",
+                        "Pending"
+                    ]
+                },
+                {
+                    "name": "serName",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "AliExpress Standard Shipping",
+                        "ePacket",
+                        "AliExpress Premium Shipping",
+                        "AliExpress Expedited Shipping",
+                        "AliExpress Saver Shipping"
+                      ]
+                },
+                {
+                    "name": "serPrice",
+                    "type": "string",
+                    "function": "random.range",
+                    "values": [10,20 ]
+                },
+                {
+                    "name": "serRating",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
+                },
+                {
+                    "name": "offerStatus",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        "Available",
+                        "Sold Out",
+                        "Coming Soon"
+                    ]
+                },
+                {
+                    "name": "offerRating",
+                    "type": "string",
+                    "function": "random",
+                    "values": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ]
+                },
+                {
+                    "name": "offerPrice",
+                    "type": "string",
+                    "list_column": ["offerName", "prodPrice"],
+                    "function": "multiplication",
+                    "factor":0.01
+                    
+                }
+            ]
+        }
+    ]
+}

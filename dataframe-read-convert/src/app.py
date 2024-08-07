@@ -36,6 +36,18 @@ def multiplicar_por_factor(row, columnas, factor, type_data):
     if type_data=='string':
         resultado = str(resultado)
     return resultado
+
+def dividir_valor(row, columna,word_split ,value, type_data):
+    #print('Prin de row',row)
+    if row[columna]:
+    #    print('+++++++++++++++++++=Este es el valor de la columna',row[columna])
+        list_values = row[columna].split(word_split)
+        value = list_values[value]
+
+        resultado= value
+        if type_data=='string':
+            resultado = str(resultado)
+        return resultado
 def agregar_properties(df, properties_default):
 
     for prop in properties_default:
@@ -46,7 +58,11 @@ def agregar_properties(df, properties_default):
         col_function = prop.get('function', None)
         col_values = prop.get('values', [])
         col_default_value = prop.get('value', None)
-        
+
+        #Para Split
+        column_name = prop.get('column_name', None)
+        word_split = prop.get('word_split', None)
+
         if col_function == 'random' and col_values:
             df[col_name] = df.apply(lambda _: generar_valor(col_values, col_type), axis=1)
         elif col_function == 'random.range' and col_values:
@@ -54,6 +70,10 @@ def agregar_properties(df, properties_default):
         elif col_function == 'multiplication' :
         
             df[col_name] = df.apply(lambda row: multiplicar_por_factor(row, col_list_column, col_factor, col_type), axis=1)
+        
+        elif col_function == 'split':
+            df[col_name] = df.apply(lambda row: dividir_valor(row, column_name,word_split, col_default_value, col_type), axis=1)
+        
         else:
             df[col_name] = col_default_value if col_default_value is not None else ''
         
@@ -99,11 +119,10 @@ def leer_archivo(nombre_archivo):
 def consolidar_y_exportar(lista_dfs, estructura, num_filas, renombrar,list_properties_default, list_type_data,nombre_archivo_json='archivo_consolidado.json'):
     dfs_estandarizados = []
     for df, filas, renom, properties_default,type_data in zip(lista_dfs, num_filas, renombrar,list_properties_default, list_type_data):
-     
-        df_estandarizado = estandarizar_dataframe(df, estructura, renom)
+        df_add = agregar_properties(df, properties_default)
+        df_estandarizado = estandarizar_dataframe(df_add, estructura, renom)     
         df_seleccionado = seleccionar_filas(df_estandarizado, filas)
-        df_add = agregar_properties(df_seleccionado, properties_default)
-        df_tipado = type_data_function(df_add, type_data)
+        df_tipado = type_data_function(df_seleccionado, type_data)
         dfs_estandarizados.append(df_tipado)
     df_consolidado = pd.concat(dfs_estandarizados, ignore_index=True)
     # Exportar como una lista de objetos JSON

@@ -1,0 +1,46 @@
+{
+    "estructura_estandar": [
+        "conId",
+        "conTitle",
+        "conDescription",
+        "conTextMaterial",
+        "conMultimedia",
+        "conCreationParameters",
+        "conTemplate"
+    ],
+    "dataframes": [
+        {
+            "rename": {
+                "status_id": "conId",
+                "status_message": "conDescription",
+                "status_type": "conTextMaterial",
+                "status_link": "conMultimedia"
+            },
+            "type_data": [
+                
+            ],
+            "count_row": 700,
+            "data_path": "tourism_amazon.csv",
+            "properties_default": [
+                
+                {
+                    "name": "conTitle",
+                    "type": "string",
+                    "value": ""
+                },                 
+                {
+                    "name": "conCreationParameters",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "conTemplate",
+                    "type": "string",
+                    "value": ""
+                }
+               
+            
+            ]
+        }
+    ]
+}
