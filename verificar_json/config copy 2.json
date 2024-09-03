@@ -1,0 +1,83 @@
+{
+    "json_data_path": "data/1725034329558.json",
+    "output_data_path": "output.json",
+    "required_keys": [
+        "con_experience",
+        "con_specialization",
+        "con_certifications",
+        "con_studies",
+        "con_website",
+        "con_services",
+        "con_fees",
+        "con_bio"
+    ],
+    "key_types": {
+        "con_experience": "int",
+        "con_specialization": "str",
+        "con_certifications": "str",
+        "con_studies": "str",
+        "con_website": "str",
+        "con_services": "str",
+        "con_fees": "int",
+        "con_bio": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "con_certifications": [
+            "CompTIA Security+",
+            "Certified Information Systems Security Professional (CISSP)",
+            "Certified Data Scientist",
+            "Google Cloud Certified - Professional Cloud Developer",
+            "Certified Management Consultant (CMC)",
+            "Certified Business Coach (CBC)",
+            "Certified Marketing Professional (CMP)",
+            "Certified Human Resources Professional (CHRP)"
+        ],
+        "con_studies": [
+            "Master of Science in Information Technology",
+            "Bachelor of Science in Computer Science",
+            "PhD in Information Systems",
+            "Certificate in Cybersecurity",
+            "Master of Business Administration (MBA)",
+            "Bachelor of Arts in Marketing",
+            "PhD in Organizational Development",
+            "Certificate in Leadership Development"
+        ],
+        "con_services": [
+            "Cloud computing migration",
+            "Cybersecurity risk assessment",
+            "Data analytics consulting",
+            "IT project management",
+            "Strategic planning",
+            "Marketing strategy development",
+            "Human resources consulting",
+            "Operations management"
+        ],
+        "con_bio": [
+            "Experienced IT consultant with expertise in cloud computing and cybersecurity",
+            "Results-driven consultant with a strong background in data analytics",
+            "Seasoned consultant with a passion for IT project management",
+            "Innovative consultant with a focus on emerging technologies",
+            "Results-driven consultant with expertise in strategic planning",
+            "Innovative consultant with a focus on marketing strategy",
+            "Experienced consultant with a background in human resources",
+            "Seasoned consultant with a passion for operations management"
+        ]
+    },
+    "random_number_ranges": {
+        "con_fees": [
+            600,
+            5000
+        ],
+        "con_experience": [
+            1,
+            5
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "con_bio": 250,
+        "con_services": 150
+    }
+}

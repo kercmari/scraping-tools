@@ -1,0 +1,109 @@
+{
+    "json_data_path": "data/1725125278629.json",
+    "output_data_path": "interes_032_sol1.json",
+    "required_keys": [
+        "typeOfCompany",
+        "size",
+        "category",
+        "goals",
+        "income",
+        "creditScores",
+        "investorName",
+        "typeOfFinancing",
+        "typeOfInterest",
+        "companyName",
+        "specialization",
+        "tariff"
+    ],
+    "key_types": {
+        "typeOfCompany": "str",
+        "size": "str",
+        "category": "str",
+        "goals": "str",
+        "income": "int",
+        "creditScores": "int",
+        "investorName": "str",
+        "typeOfFinancing": "str",
+        "typeOfInterest": "str",
+        "companyName": "str",
+        "specialization": "str",
+        "tariff": "int"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "typeOfCompany": [
+            "advertising",
+            "real estate",
+            "technology",
+            "finance",
+            "healthcare"
+        ],
+        "size": [
+            "Small",
+            "Medium",
+            "Large"
+        ],
+        "category": [
+            "Advertising",
+            "Real Estate",
+            "Technology",
+            "Finance",
+            "Healthcare"
+        ],
+        "goals": [
+            "Implement targeted advertising strategies to increase ROI by 25%.",
+            "Expand market share by 15% through strategic investments.",
+            "Optimize operational efficiency to reduce costs by 10%.",
+            "Increase product diversification to enhance revenue streams.",
+            "Strengthen brand presence in international markets."
+        ],
+        "investorName": [
+            "Ad Pepper Media",
+            "Global Real Estate Corp",
+            "Tech Innovators Inc",
+            "Future Finance Group",
+            "HealthTech Ventures"
+        ],
+        "typeOfFinancing": [
+            "Equity",
+            "Debt",
+            "Venture Capital",
+            "Private Equity",
+            "Angel Investment"
+        ],
+        "typeOfInterest": [
+            "Growth",
+            "Income",
+            "Value",
+            "Impact",
+            "Balanced"
+        ],
+        "specialization": [
+            "Marketing",
+            "Finance",
+            "Technology",
+            "Operations",
+            "Strategy"
+        ]
+    },
+    "random_number_ranges": {
+        "income": [
+            1000000,
+            50000000
+        ],
+        "creditScores": [
+            600,
+            850
+        ],
+        "tariff": [
+            100000,
+            1000000
+        ]
+    },
+    "max_empty_keys": 2,
+    "key_char_limits": {
+        "goals": 200,
+        "investorName": 100
+    }
+}

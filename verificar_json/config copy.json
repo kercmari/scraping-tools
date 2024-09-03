@@ -1,0 +1,72 @@
+{
+    "json_data_path": "data/1724818841258.json",
+    "output_data_path": "output.json",
+    "required_keys": [
+        "con_experience",
+        "con_specialization",
+        "con_certifications",
+        "con_studies",
+        "con_website",
+        "con_services",
+        "con_fees",
+        "con_bio"
+    ],
+    "key_types": {
+        "con_experience": "str",
+        "con_specialization": "str",
+        "con_certifications": "str",
+        "con_studies": "str",
+        "con_website": "str",
+        "con_services": "str",
+        "con_fees": "int",
+        "con_bio": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "user_id": [
+            "user1",
+            "user2",
+            "user3",
+            "user4"
+        ],
+        "user_education_level": [
+            "PhD",
+            "BBA",
+            "MCA",
+            "MBA"
+        ],
+        "user_skills": [
+            "Quality assurance processes Testing",
+            "Event planning Conference logistics",
+            "Teaching pedagogy",
+            "Interaction design principles"
+        ],
+        "organization_name": [
+            "comapny",
+            "comapny one",
+            "comapny two"
+        ],
+        "working_mode": [
+            "hybrid",
+            "in-person"
+        ],
+        "job_offer_description": [
+            "Designers specialize",
+            "Consultant assists couples in planning",
+            "Testing Specialists assess the performance of software applications by conducting load stress and scalability tests. They identify bottlenecks optimize performance and ensure software ",
+            "Protect an organizations computer networks"
+        ]
+    },
+    "random_number_ranges": {
+        "conFees": [
+            600,
+            5000
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "con_bio": 250,
+        "con_services": 250
+    }
+}
