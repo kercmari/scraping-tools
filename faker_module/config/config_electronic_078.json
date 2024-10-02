@@ -1,0 +1,34 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_electronic_contracts_100k.json",
+    "propertiesSet": {
+        "electronicContract": {
+            "ecContractCode": "random contract_code",
+            "ecContractDescription": "random paragraph",
+            "ecTerms": "random paragraph",
+            "ecConditions": "random paragraph",
+            "ecDigitalSignature": "random digital_signature",
+            "ecState": "choice values='Activo, Inactivo'",
+            "ecOrganizationId": "random int min=1 max=1000",
+            "ecBeneficiaryId": "random int min=1 max=1000",
+            "ecDonorId": "random int min=1 max=1000",
+            "ecTransactionId": "random transaction_id"
+        }
+    },
+    "propertiesTypeSet": {
+        "electronicContract": {
+            "ecContractCode": "str",
+            "ecContractDescription": "str",
+            "ecTerms": "str",
+            "ecConditions": "str",
+            "ecDigitalSignature": "str",
+            "ecState": "str",
+            "ecOrganizationId": "int",
+            "ecBeneficiaryId": "int",
+            "ecDonorId": "int",
+            "ecTransactionId": "str"
+        }
+    }
+}

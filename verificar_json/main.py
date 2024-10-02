@@ -1,6 +1,7 @@
 import json
 import random
 import re
+from faker import Faker
 
 class JSONVerifier:
     def __init__(self, config_path):
@@ -13,8 +14,13 @@ class JSONVerifier:
         self.separator = self.config.get("separator", ",")
         self.random_values = self.config.get("random_values", {})
         self.random_number_ranges = self.config.get("random_number_ranges", {})
+        self.random_float_ranges = self.config.get("random_float_ranges", {})
+        self.operations = self.config.get("operations", [])
         self.max_empty_keys = self.config.get("max_empty_keys", 0)
         self.key_char_limits = self.config.get("key_char_limits", {})
+        self.faker_values = self.config.get("fakerValues", {})  # Adding fakerValues support
+
+        self.faker = Faker()
 
     def load_config(self, config_path):
         with open(config_path, 'r') as config_file:
@@ -56,6 +62,7 @@ class JSONVerifier:
             if isinstance(data, dict):
                 trimmed_data = {k.strip(): v for k, v in data.items()}  # Trim spaces from keys
                 verified_data = self.transform_data(trimmed_data)
+                verified_data = self.apply_operations(verified_data)  # Apply math operations
                 if self.count_empty_keys(verified_data) <= self.max_empty_keys:
                     verified_data_list.append(verified_data)
             else:
@@ -66,18 +73,74 @@ class JSONVerifier:
     def transform_data(self, data):
         verified_data = {}
         for key in self.required_keys:
-            snake_key = camel_to_snake(key)
-            if snake_key in data:
-                if not isinstance(data[snake_key], self.key_types.get(key, type(data[snake_key]))):
+            # Look for the key in different formats
+            found_key, value = self.find_key(data, key)
+            if found_key:
+                if not isinstance(value, self.key_types.get(key, type(value))):
                     verified_data[key] = self.assign_random_value(key)
                 else:
-                    verified_data[key] = self.apply_char_limit(key, data[snake_key])
-                if self.is_empty(verified_data[key]) and key in self.random_values:
-                    verified_data[key] = self.assign_random_value(key)  # Fill empty or "undefined" with random value
+                    verified_data[key] = self.apply_char_limit(key, value)
+                if self.is_empty(verified_data[key]):
+                    verified_data[key] = self.assign_random_value(key)  # Fill empty with random value
             else:
-                verified_data[key] = self.apply_char_limit(key, self.assign_random_value(key))
+                verified_data[key] = self.assign_random_value(key)
+        
+        # Apply faker values if the key is missing
+        for faker_key, faker_instruction in self.faker_values.items():
+            if faker_key not in verified_data or self.is_empty(verified_data[faker_key]):
+                verified_data[faker_key] = self.apply_faker_value(faker_instruction)
         
         return verified_data
+
+    def apply_operations(self, data):
+        """
+        Applies mathematical operations defined in the configuration for null values.
+        """
+        for operation in self.operations:
+            if operation['type'] == 'math':
+                key = operation['key']
+                precision = operation.get('precision')
+                if self.is_empty(data.get(key)):
+                    try:
+                        problem = operation['problem']
+                        # Replace variables in the problem with their values from `data`
+                        for var in re.findall(r'\b\w+\b', problem):
+                            if var in data:
+                                problem = problem.replace(var, str(data[var]))
+                        # Evaluate the math expression
+                        result = eval(problem)
+                        if precision is not None:
+                            result = round(result, precision)
+                        data[key] = result
+                    except Exception as e:
+                        print(f"Error applying operation for key '{key}': {e}")
+        return data
+
+    def apply_faker_value(self, faker_instruction):
+        """
+        Use the faker library to generate a value based on the instruction.
+        """
+        try:
+            # Ensure we use correct Faker methods, e.g., "city", "name"
+            faker_method = getattr(self.faker, faker_instruction)
+            return faker_method()
+        except AttributeError:
+            print(f"Error: Faker does not support the instruction '{faker_instruction}'")
+            return None
+
+    def find_key(self, data, required_key):
+        """
+        Looks for a key in camelCase, snake_case, and SCREAMING_SNAKE_CASE formats.
+        Returns the found key and its value, or (None, None) if not found.
+        """
+        camel = required_key
+        snake = camel_to_snake(required_key)
+        screaming_snake = snake.upper()
+        
+        for variant in [camel, snake, screaming_snake]:
+            if variant in data:
+                return variant, data[variant]
+        return None, None
 
     def count_empty_keys(self, data):
         """
@@ -87,26 +150,31 @@ class JSONVerifier:
 
     def is_empty(self, value):
         """
-        Check if a value is considered empty, including "undefined".
+        Checks if a value is considered empty, including "undefined".
         """
-        return value in [None, "", [], {}, 0, "undefined"]
+        return value in [None, "", [], {}, "undefined"]
 
     def assign_random_value(self, key):
         """
-        Assign a random value either from a predefined list or from a number range.
+        Assign a random value from predefined lists, number ranges, float ranges, or generate a random string.
         """
+        if key in self.faker_values:
+            return self.apply_faker_value(self.faker_values[key])
         if key in self.random_values:
             return random.choice(self.random_values[key])
         if key in self.random_number_ranges:
             min_val, max_val = self.random_number_ranges[key]
             return random.randint(min_val, max_val)
+        if key in self.random_float_ranges:
+            min_val, max_val = self.random_float_ranges[key]
+            return random.uniform(min_val, max_val)
         if self.key_types.get(key) == str:
             return ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k=10))
         return None
 
     def apply_char_limit(self, key, value):
         """
-        Apply character limit to a string if specified in the config.
+        Apply a character limit to a string if specified in the configuration.
         """
         if isinstance(value, str) and key in self.key_char_limits:
             return value[:self.key_char_limits[key]]
@@ -116,25 +184,24 @@ class JSONVerifier:
         if target_type == str and isinstance(value, list):
             return self.separator.join(map(str, value))
         if target_type == str and isinstance(value, str):
-            # Verificar si el string es un array de algún tipo
             if value.startswith('[') and value.endswith(']'):
                 try:
-                    # Convertir el string a lista
                     value_list = json.loads(value)
                     if isinstance(value_list, list):
                         return self.separator.join(map(str, value_list))
                 except json.JSONDecodeError:
-                    return value  # No se pudo convertir, devolver el valor original
+                    return value
         if target_type == int:
             if isinstance(value, str):
-                # Extract numeric part from the string and convert to int
                 numeric_value = re.sub(r'\D', '', value)
                 if numeric_value:
                     return int(numeric_value)
                 else:
-                    return self.assign_random_value(key)  # Assign random number if no numeric value found
+                    return self.assign_random_value(key)
             if isinstance(value, (float, int)):
                 return int(value)
+        if isinstance(value, bool):
+            return value  # Do not modify boolean values
         if isinstance(value, target_type):
             return value
         try:
@@ -148,6 +215,9 @@ def snake_to_camel(snake_str):
 
 def camel_to_snake(camel_str):
     return re.sub(r'(?<!^)(?=[A-Z])', '_', camel_str).lower()
+
+def screaming_snake_to_snake(screaming_snake_str):
+    return screaming_snake_str.lower()
 
 # Example usage
 if __name__ == "__main__":

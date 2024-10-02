@@ -1,0 +1,24 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/donation_100k.json",
+    "propertiesSet": {
+        "donation": {
+            "dtAmount": "random pyfloat left_digits=4 right_digits=2 positive=True min_value=10 max_value=10000",
+            "dtState": "choice values='iniciada, recibida, transferida, utilizada'",
+            "dtProjectId": "random int min=1 max=500",
+            "dtOrganizationId": "random int min=1 max=1000",
+            "dtDonorId": "random int min=1 max=10000"
+        }
+    },
+    "propertiesTypeSet": {
+        "donation": {
+            "dtAmount": "float",
+            "dtState": "str",
+            "dtProjectId": "int",
+            "dtOrganizationId": "int",
+            "dtDonorId": "int"
+        }
+    }
+}

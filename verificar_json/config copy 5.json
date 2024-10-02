@@ -1,0 +1,84 @@
+{
+    "json_data_path": "data/1726870586799.json",
+    "output_data_path": "interest_122-014.json",
+    "required_keys": [
+        "intUserName",
+        "intProjType",
+        "intProjArea",
+        "intProjActivity",
+        "intProjActivityCost",
+        "intProjActivityProfit",
+        "intProjResources",
+        "intProjRecomendation"
+    ],
+    "key_types": {
+        "intUserName": "str",
+        "intProjType": "str",
+        "intProjArea": "str",
+        "intProjActivity": "str",
+        "intProjActivityCost": "float",
+        "intProjActivityProfit": "float",
+        "intProjResources": "str",
+        "intProjRecomendation": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "intProjType": [
+            "Análisis de mercado",
+            "Optimización de procesos",
+            "Implementación tecnológica",
+            "Evaluación financiera",
+            "Marketing digital"
+        ],
+        "intProjArea": [
+            "Ventas",
+            "Logística",
+            "Producción",
+            "Finanzas",
+            "Marketing"
+        ],
+        "intProjActivity": [
+            "Estudio de mercado",
+            "Análisis de la cadena de suministro",
+            "Automatización de procesos",
+            "Campaña publicitaria",
+            "Evaluación de costos"
+        ],
+        "intProjResources": [
+            "Software especializado",
+            "Equipo de expertos",
+            "Base de datos",
+            "Consultores externos",
+            "Herramientas de automatización"
+        ],
+        "intProjRecomendation": [
+            "Optimizar recursos tecnológicos",
+            "Incorporar nuevas herramientas",
+            "Aumentar la inversión en capacitación",
+            "Reducir costos operativos",
+            "Mejorar la estrategia de marketing"
+        ]
+    },
+    "random_number_ranges": {
+        "intProjActivityCost": [
+            500,
+            100000
+        ],
+        "intProjActivityProfit": [
+            1000,
+            200000
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "intUserName": 50,
+        "intProjType": 50,
+        "intProjArea": 50,
+        "intProjActivity": 100,
+        "intProjActivityCost": 20,
+        "intProjActivityProfit": 20,
+        "intProjResources": 100,
+        "intProjRecomendation": 200
+    }
+}

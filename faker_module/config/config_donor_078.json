@@ -1,0 +1,22 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_donor_100k.json",
+    "propertiesSet": {
+        "donor": {
+            "dnPreference": "random int min=1 max=10000",
+            "dnDonationHistory": "random array size_random min=1 max=5 type=int min=1 max=100000",
+            "dnUserId": "random int min=1 max=10000",
+            "dnTransactionId": "random transaction_id"
+        }
+    },
+    "propertiesTypeSet": {
+        "donor": {
+            "dnPreference": "int",
+            "dnDonationHistory": "array",
+            "dnUserId": "int",
+            "dnTransactionId": "str"
+        }
+    }
+}

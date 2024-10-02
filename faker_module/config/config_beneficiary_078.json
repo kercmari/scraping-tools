@@ -1,0 +1,22 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_beneficiary_100k.json",
+    "propertiesSet": {
+        "beneficiary": {
+            "bnUserId": "random int min=1 max=10000",
+            "bnOrganizationId": "random int min=1 max=1000",
+            "bnProjectId": "random int min=1 max=500",
+            "bnTransactionId": "random transaction_id"
+        }
+    },
+    "propertiesTypeSet": {
+        "beneficiary": {
+            "bnUserId": "int",
+            "bnOrganizationId": "int",
+            "bnProjectId": "int",
+            "bnTransactionId": "str"
+        }
+    }
+}

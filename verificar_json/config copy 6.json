@@ -1,0 +1,52 @@
+{
+    "json_data_path": "data/1727283219873.json",
+    "output_data_path": "interest_84_sol1.json",
+    "required_keys": [
+        "intUserPreferences",
+        "intUserType",
+        "intInvType",
+        "intInvPerformance",
+        "intInvCompanyName"
+    ],
+    "key_types": {
+        "intUserPreferences": "str",
+        "intUserType": "str",
+        "intInvType": "str",
+        "intInvPerformance": "float",
+        "intInvCompanyName": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "intUserPreferences": [
+            "Corto plazo",
+            "Medio plazo",
+            "Largo plazo"
+        ],
+        "intUserType": [
+            "Empresa",
+            "Individual",
+            "Asociación"
+        ],
+        "intInvType": [
+            "Activo",
+            "Pasivo",
+            "Mixto"
+        ],
+        "intInvCompanyName": [
+            "Intel",
+            "Apple",
+            "Google",
+            "Tesla",
+            "Amazon"
+        ]
+    },
+    "randomNumber_ranges": {
+        "intInvPerformance": [
+            0.05,
+            0.30
+        ]
+    },
+    "max_empty_keys": 1,
+    "keyChar_limits": {}
+}

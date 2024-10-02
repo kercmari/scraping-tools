@@ -1,0 +1,23 @@
+{
+    "total": 200000,
+    "collection": "../data/interest_078.json",
+    "outputFile": "../output/interest_078_200k.json",
+    "propertiesSet": {
+        "intUserType": "random",
+        "intUserName": "random name",
+        "intComName": "random company",
+        "intDonDate": "random date_past",
+        "intDonAmount": "pyfloat min_value=0 max_value=1 right_digits=2",
+        "intBenClasification": "random",
+        "intTraStatus": "random"
+    },
+    "propertiesTypeSet": {
+        "intUserType": "str",
+        "intUserName": "str",
+        "intComName": "str",
+        "intDonDate": "str",
+        "intDonAmount": "float",
+        "intBenClasification": "str",
+        "intTraStatus": "str"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "total": 200000,
+    "collection": "../data/interes_032_sol1.json",
+    "outputFile": "../output/interest032_sol1_200k.json",
+    "propertiesSet": {
+        "typeOfCompany": "random",
+        "size": "random",
+        "category": "random",
+        "goals": "random",
+        "income": "pyfloat min_value=10000 max_value=990000",
+        "creditScores": "pyfloat min_value=0 max_value=999",
+        "investorName": "random",
+        "typeOfFinancing": "random",
+        "typeOfInterest": "random",
+        "companyName": "random",
+        "specialization": "random",
+        "tariff": "pyfloat min_value=1000 max_value=99000"
+    },
+    "propertiesTypeSet": {
+        "typeOfCompany": "str",
+        "size": "str",
+        "category": "str",
+        "goals": "str",
+        "income": "int",
+        "creditScores": "int",
+        "investorName": "str",
+        "typeOfFinancing": "str",
+        "typeOfInterest": "str",
+        "companyName": "str",
+        "specialization": "str",
+        "tariff": "int"
+    }
+}

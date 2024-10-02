@@ -1,0 +1,38 @@
+{
+    "json_data_path": "data/1725496342974.json",
+    "output_data_path": "output_financial_results.json",
+    "required_keys": [
+        "finResIncome",
+        "finResCreditRate",
+        "finResAssets",
+        "finResDebts"
+    ],
+    "key_types": {
+        "finResIncome": "int",
+        "finResCreditRate": "float",
+        "finResAssets": "int",
+        "finResDebts": "int"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {},
+    "random_number_ranges": {
+        "finResIncome": [
+            500000,
+            1200000
+        ],
+        "finResAssets": [
+            600000,
+            1000000
+        ],
+        "finResDebts": [
+            50000,
+            150000
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "finResIncome": 10,
+        "finResAssets": 10
+    }
+}

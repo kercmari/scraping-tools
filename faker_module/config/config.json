@@ -1,0 +1,40 @@
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/designer.json",
+    "propertiesSet": {
+        "designer": {
+            "designerUserId": "random unique int min=0 max=3000000",
+            "designerName": "random name",
+            "designerGender": "choice values='masculino, femenino'",
+            "designerPreferences": "choice values='minimalista, moderno, clásico, vanguardista'",
+            "event": "random int min=1 max=100",
+            "user": "random int min=1 max=10000",
+            "experience": "random sentence",
+            "portfolio": {
+                "array_elements": [
+                    "random word",
+                    "random word"
+                ]
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "designer": {
+            "designerUserId": "int",
+            "designerName": "str",
+            "designerGender": "str",
+            "designerPreferences": "str",
+            "event": "int",
+            "user": "int",
+            "experience": "str",
+            "portfolio": {
+                "element_types": [
+                    "str",
+                    "str"
+                ]
+            }
+        }
+    }
+}

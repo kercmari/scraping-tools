@@ -1,0 +1,9 @@
+{
+    "total": 200000,
+    "properties": {
+        "finResIncome": "pyfloat min_value=100000 max_value=9900000",
+        "finResCreditRate": "pyfloat min_value=0 max_value=1 right_digits=2",
+        "finResAssets": "pyfloat min_value=100000 max_value=9900000",
+        "finResDebts": "pyfloat min_value=10000 max_value=99999"
+    }
+}

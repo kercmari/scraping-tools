@@ -1,0 +1,20 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/files_data.json",
+    "propertiesSet": {
+        "files": {
+            "flTypeOfFile": "random file_extension",
+            "flName": "random file_name extension_from=flTypeOfFile",
+            "flSize": "random int min=1024 max=1048576"
+        }
+    },
+    "propertiesTypeSet": {
+        "files": {
+            "flTypeOfFile": "str",
+            "flName": "str",
+            "flSize": "int"
+        }
+    }
+}

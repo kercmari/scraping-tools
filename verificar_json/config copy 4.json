@@ -1,0 +1,113 @@
+{
+    "json_data_path": "data/1726337834929.json",
+    "output_data_path": "interest_115.json",
+    "required_keys": [
+        "intUserName",
+        "intUserDemographicsCity",
+        "intUserDemographicsCountry",
+        "intUserDemographicsPostalCode",
+        "intVehDriverUser",
+        "intVehPlate",
+        "intDuCalification",
+        "intTfType",
+        "intRteDistance",
+        "intRteEstimatedTime",
+        "intRteCondition",
+        "intRteTemp",
+        "intRteName",
+        "intRteBasePrice"
+    ],
+    "key_types": {
+        "intUserName": "str",
+        "intUserDemographicsCity": "str",
+        "intUserDemographicsCountry": "str",
+        "intUserDemographicsPostalCode": "str",
+        "intVehDriverUser": "str",
+        "intVehPlate": "str",
+        "intDuCalification": "float",
+        "intTfType": "str",
+        "intRteDistance": "float",
+        "intRteEstimatedTime": "int",
+        "intRteCondition": "str",
+        "intRteTemp": "float",
+        "intRteName": "str",
+        "intRteBasePrice": "float"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "intUserName": [
+            "usuario123",
+            "cliente_pro",
+            "pasajero_est",
+            "nombre_aleatorio",
+            "viajero_frecuente"
+        ],
+        "intUserDemographicsCity": [
+            "Nueva York",
+            "Los Ángeles",
+            "Chicago",
+            "Houston",
+            "Miami"
+        ],
+        "intUserDemographicsCountry": [
+            "Estados Unidos",
+            "Canadá",
+            "México",
+            "Reino Unido",
+            "Brasil"
+        ],
+        "intVehDriverUser": [
+            "Carlos López",
+            "Juan García",
+            "María Pérez",
+            "Ana Sánchez",
+            "Luis Martínez"
+        ],
+        "intVehPlate": [
+            "ABC1234",
+            "XYZ5678",
+            "JKL9101",
+            "MNO2345",
+            "PQR6789"
+        ],
+        "intRteCondition": [
+            "libre",
+            "colapsada",
+            "en mal estado",
+            "construcción en curso",
+            "condiciones normales"
+        ],
+        "intRteName": [
+            "Ruta 66",
+            "Avenida Principal",
+            "Carretera del Sol",
+            "Autopista Norte",
+            "Camino del Este"
+        ]
+    },
+    "random_number_ranges": {
+        "intDuCalification": [
+            1,
+            5
+        ],
+        "intRteDistance": [
+            1,
+            50
+        ],
+        "intRteEstimatedTime": [
+            10,
+            120
+        ],
+        "intRteTemp": [
+            -10,
+            45
+        ],
+        "intRteBasePrice": [
+            5,
+            100
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {}
+}

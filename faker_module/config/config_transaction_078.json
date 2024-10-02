@@ -1,0 +1,36 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/transaction_data.json",
+    "propertiesSet": {
+        "transaction": {
+            "tcTransactionType": "choice values='tipo1, tipo2, tipo3'",
+            "tcNtfs": "random word",
+            "status": "choice values='rechazada, aceptada'",
+            "tcPay": {
+                "array_elements": [
+                    "choice values='tarjeta de crédito, transferencia bancaria, efectivo'",
+                    "random file_name extension='png'",
+                    "random date_past",
+                    "random transaction_id"
+                ]
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "transaction": {
+            "tcTransactionType": "str",
+            "tcNtfs": "str",
+            "status": "str",
+            "tcPay": {
+                "element_types": [
+                    "str",
+                    "str",
+                    "date",
+                    "str"
+                ]
+            }
+        }
+    }
+}

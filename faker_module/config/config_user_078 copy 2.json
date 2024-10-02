@@ -1,0 +1,51 @@
+{
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_user_100k.json",
+    "propertiesSet": {
+        "User": {
+            "username": "random username",
+            "password": "random password",
+            "email": "random email",
+            "userType": "random userType",
+            "phone": "random phone",
+            "ethAddress": "random ethAddress",
+            "nemotecnic": "random nemotecnic",
+            "pin": "random pin",
+            "basicData": {
+                "name": "random name",
+                "lastName": "random lastName",
+                "birthdate": "random date_of_birth",
+                "dni": "random dni",
+                "gender": "random gender",
+                "location": "random city",
+                "socialData": "random social_data",
+                "preferences": "random word array size=3 concatenator=', '",
+                "logo": "random file_name"
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "User": {
+            "username": "str",
+            "password": "str",
+            "email": "str",
+            "userType": "str",
+            "phone": "str",
+            "ethAddress": "str",
+            "nemotecnic": "str",
+            "pin": "str",
+            "basicData": {
+                "name": "str",
+                "lastName": "str",
+                "birthdate": "date",
+                "dni": "str",
+                "gender": "str",
+                "location": "str",
+                "socialData": "str",
+                "preferences": "str",
+                "logo": "str"
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_organization_100k.json",
+    "propertiesSet": {
+        "organization": {
+            "orName": "random company",
+            "orDni": "random dni",
+            "orDateOfIncorporation": "random date_past",
+            "orWebsites": "random url array size=2 concatenator=', '",
+            "orLocation": {
+                "country": "random country",
+                "state": "random state",
+                "city": "random city",
+                "street": "random street_address",
+                "mapLocation": "random latitude, random longitude concatenator=', '"
+            },
+            "orDescription": "random paragraph",
+            "orType": "random organization_type",
+            "orUserId": "random int min=1 max=1000",
+            "orProjectId": "random int min=1 max=1000",
+            "orContractId": "random int min=1 max=1000",
+            "orMision": "random sentence",
+            "orVision": "random sentence",
+            "orLogo": "random file_name",
+            "orActa": "random file_name",
+            "orTaxRegistration": "random tax_id",
+            "orOperatingLicense": "random license_number",
+            "orPhone": "random phone_number",
+            "orOffice": "random building_number",
+            "orEmail": "random email",
+            "orThankYouMessage": "random paragraph"
+        }
+    },
+    "propertiesTypeSet": {
+        "organization": {
+            "orName": "str",
+            "orDni": "str",
+            "orDateOfIncorporation": "date",
+            "orWebsites": "str",
+            "orLocation": {
+                "country": "str",
+                "state": "str",
+                "city": "str",
+                "street": "str",
+                "mapLocation": "str"
+            },
+            "orDescription": "str",
+            "orType": "str",
+            "orUserId": "int",
+            "orProjectId": "int",
+            "orContractId": "int",
+            "orMision": "str",
+            "orVision": "str",
+            "orLogo": "str",
+            "orActa": "str",
+            "orTaxRegistration": "str",
+            "orOperatingLicense": "str",
+            "orPhone": "str",
+            "orOffice": "str",
+            "orEmail": "str",
+            "orThankYouMessage": "str"
+        }
+    }
+}

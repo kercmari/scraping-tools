@@ -1,0 +1,38 @@
+{
+    "json_data_path": "data/1727296218365.json",
+    "output_data_path": "interest_84_sol2.json",
+    "required_keys": [
+        "intTokValue",
+        "intTracTransactionDate",
+        "intEvtType",
+        "intTracAmount"
+    ],
+    "keyTypes": {
+        "intTokValue": "int",
+        "intTracTransactionDate": "str",
+        "intEvtType": "str",
+        "intTracAmount": "int"
+    },
+    "emptyAllowed_keys": [],
+    "separator": ",",
+    "randomValues": {
+        "intEvtType": [
+            "Informe de crecimiento del mercado",
+            "Análisis de tendencias del sector",
+            "Proyección financiera anual",
+            "Resumen de ventas trimestral"
+        ]
+    },
+    "random_number_ranges": {
+        "intTokValue": [
+            1000,
+            5000
+        ],
+        "intTracAmount": [
+            100,
+            1000
+        ]
+    },
+    "maxEmpty_keys": 1,
+    "key_char_limits": {}
+}

@@ -1,0 +1,133 @@
+{
+    "json_data_path": "data/merged_output_20240903201508.json",
+    "output_data_path": "interest032_sol3_2.json",
+    "required_keys": [
+        "name",
+        "type",
+        "category",
+        "location",
+        "size",
+        "financialState",
+        "finantialNeeds",
+        "annualRevenue",
+        "annualOperatingCosts",
+        "rewardValue",
+        "investmentAmount",
+        "netIncome",
+        "totalInvestment",
+        "ROI"
+    ],
+    "key_types": {
+        "name": "str",
+        "type": "str",
+        "category": "str",
+        "location": "str",
+        "size": "str",
+        "financialState": "str",
+        "finantialNeeds": "str",
+        "annualRevenue": "int",
+        "annualOperatingCosts": "int",
+        "rewardValue": "float",
+        "investmentAmount": "int",
+        "netIncome": "int",
+        "totalInvestment": "int",
+        "ROI": "float"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "name": [
+            "Kuhlman LLC",
+            "Anderson Enterprises",
+            "Johnson Holdings",
+            "Parker & Sons",
+            "Morgan & Co"
+        ],
+        "type": [
+            "OG",
+            "Corporation",
+            "LLC",
+            "Partnership",
+            "Sole Proprietorship"
+        ],
+        "category": [
+            "Advertising",
+            "Technology",
+            "Healthcare",
+            "Real Estate",
+            "Finance"
+        ],
+        "location": [
+            "United States",
+            "Canada",
+            "United Kingdom",
+            "Germany",
+            "Australia"
+        ],
+        "size": [
+            "Small",
+            "Medium",
+            "Large",
+            "Extra large"
+        ],
+        "financialState": [
+            "Stable",
+            "Growing",
+            "Declining",
+            "Volatile",
+            "Estable"
+        ],
+        "finantialNeeds": [
+            "advertising",
+            "expansion",
+            "R&D",
+            "debt repayment",
+            "operational costs"
+        ]
+    },
+    "random_number_ranges": {
+        "annualRevenue": [
+            1000000,
+            100000000
+        ],
+        "annualOperatingCosts": [
+            500000,
+            50000000
+        ],
+        "rewardValue": [
+            100000,
+            500000
+        ],
+        "investmentAmount": [
+            500000,
+            20000000
+        ],
+        "netIncome": [
+            500000,
+            50000000
+        ],
+        "totalInvestment": [
+            500000,
+            20000000
+        ]
+    },
+    "max_empty_keys": 2,
+    "key_char_limits": {
+        "name": 100,
+        "location": 50
+    },
+    "random_float_ranges": {
+        "profitMargin": [
+            0.0,
+            1.0
+        ]
+    },
+    "operations": [
+        {
+            "type": "math",
+            "problem": "(netIncome-totalInvestment)/totalInvestment",
+            "key": "ROI",
+            "precision": 2
+        }
+    ]
+}

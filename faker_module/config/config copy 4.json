@@ -1,0 +1,21 @@
+{
+    "total": 200000,
+    "collection": "../data/output_bank_account.json",
+    "outputFile": "../output/bank_account_200k.json",
+    "propertiesSet": {
+        "baBankName": "random company",
+        "baRequestId": "random request_id",
+        "baAddress": "random address",
+        "baFullName": "random name",
+        "baContactEmail": "random email",
+        "baCollection": "random"
+    },
+    "propertiesTypeSet": {
+        "baBankName": "str",
+        "baRequestId": "str",
+        "baAddress": "str",
+        "baFullName": "str",
+        "baContactEmail": "str",
+        "baCollection": "str"
+    }
+}

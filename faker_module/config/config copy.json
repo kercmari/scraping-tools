@@ -1,0 +1,37 @@
+{
+    "total": 200000,
+    "collection": "../data/interest032_sol3.json",
+    "outputFile": "../output/interest032_sol3_200k.json",
+    "propertiesSet": {
+        "name": "random name",
+        "type": "random",
+        "category": "random",
+        "location": "random location",
+        "size": "random",
+        "financialState": "random",
+        "finantialNeeds": "random",
+        "annualRevenue": "pyfloat min_value=100000 max_value=9900000",
+        "annualOperatingCosts": "pyfloat min_value=10000 max_value=99999",
+        "rewardValue": "pyfloat min_value=10000 max_value=99999",
+        "investmentAmount": "pyfloat min_value=10000 max_value=99999",
+        "netIncome": "pyfloat min_value=10000 max_value=99999",
+        "totalInvestment": "pyfloat min_value=100000 max_value=9900000",
+        "ROI": "pyfloat min_value=0 max_value=1 right_digits=2"
+    },
+    "propertiesTypeSet": {
+        "name": "str",
+        "type": "str",
+        "category": "str",
+        "location": "str",
+        "size": "str",
+        "financialState": "str",
+        "finantialNeeds": "str",
+        "annualRevenue": "int",
+        "annualOperatingCosts": "int",
+        "rewardValue": "int",
+        "investmentAmount": "int",
+        "netIncome": "int",
+        "totalInvestment": "int",
+        "ROI": "float"
+    }
+}

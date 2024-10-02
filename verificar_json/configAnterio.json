@@ -1,0 +1,79 @@
+{
+    "json_data_path": "data/1726084642301.json",
+    "output_data_path": "interest_083_sol4.json",
+    "required_keys": [
+        "username",
+        "intComNom",
+        "intComOfer",
+        "intConCategory",
+        "intConDescription",
+        "intCamInv",
+        "intCamNum"
+    ],
+    "key_types": {
+        "username": "str",
+        "intComNom": "str",
+        "intComOfer": "str",
+        "intConCategory": "str",
+        "intConDescription": "str",
+        "intCamInv": "int",
+        "intCamNum": "int"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "username": [
+            "social_media_manager",
+            "content_creator_expert",
+            "digital_campaign_specialist",
+            "influencer_marketing_guru",
+            "marketing_analyst"
+        ],
+        "intComNom": [
+            "Red Social XYZ",
+            "Red Social LMN",
+            "Red Social DEF",
+            "Plataforma de Videos UVW",
+            "Aplicación de Contenidos GHI"
+        ],
+        "intComOfer": [
+            "Publicidad en video",
+            "Anuncio en banner",
+            "Publicación patrocinada",
+            "Promoción en stories",
+            "Colaboración con influencer"
+        ],
+        "intConCategory": [
+            "Entretenimiento",
+            "Tecnología",
+            "Moda",
+            "Deportes",
+            "Música"
+        ],
+        "intConDescription": [
+            "Lanzamiento de nueva serie de televisión",
+            "Presentación de evento deportivo",
+            "Anuncio de nuevo álbum musical",
+            "Nueva línea de moda en redes sociales",
+            "Campaña para promoción de gadget tecnológico"
+        ]
+    },
+    "random_number_ranges": {
+        "intCamInv": [
+            5000,
+            10000
+        ],
+        "intCamNum": [
+            40000,
+            60000
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "username": 30,
+        "intComNom": 50,
+        "intComOfer": 100,
+        "intConCategory": 50,
+        "intConDescription": 150
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "locale": "es_ES",
+    "total": 100000,
+    "collection": "",
+    "outputFile": "../output/collection_project_100k.json",
+    "propertiesSet": {
+        "project": {
+            "pjName": "random company",
+            "pjDescription": "random paragraph",
+            "pjStartDate": "random date_past",
+            "pjEndDate": "random date_future",
+            "pjState": "choice values='procesando, pendiente, completada'"
+        }
+    },
+    "propertiesTypeSet": {
+        "project": {
+            "pjName": "str",
+            "pjDescription": "str",
+            "pjStartDate": "date",
+            "pjEndDate": "date",
+            "pjState": "str"
+        }
+    }
+}

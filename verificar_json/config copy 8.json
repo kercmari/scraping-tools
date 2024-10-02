@@ -1,0 +1,50 @@
+{
+    "json_data_path": "data/interest_116.json",
+    "output_data_path": "interest_116.json",
+    "required_keys": [
+        "intTransBuyerId",
+        "intOffOffersId",
+        "intTransFraud",
+        "intTransAmount",
+        "intTransQuant",
+        "intAssName",
+        "intTransSellerId",
+        "intUserBasicDataCountry"
+    ],
+    "key_types": {
+        "intTransBuyerId": "str",
+        "intOffOffersId": "str",
+        "intTransFraud": "bool",
+        "intTransAmount": "float",
+        "intTransQuant": "int",
+        "intAssName": "str",
+        "intTransSellerId": "str",
+        "intUserBasicDataCountry": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "fakerValues": {
+        "intUserBasicDataCountry": "city"
+    },
+    "random_values": {
+        "intAssName": [
+            "electronics",
+            "fashion",
+            "home appliances",
+            "sports equipment",
+            "books"
+        ]
+    },
+    "random_number_ranges": {
+        "intTransAmount": [
+            10,
+            1000
+        ],
+        "intTransQuant": [
+            1,
+            10
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {}
+}

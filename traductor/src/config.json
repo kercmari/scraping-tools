@@ -2,9 +2,11 @@
     {
         "src_language": "en",
         "dest_language": "es",
-        "exclude_properties": ["zipcode", "model"],
-        "exclude_types": ["int", "list"], 
-        "update_data_path": "data.json"
+        "exclude_properties": [],
+        "exclude_types": [],
+        "update_data_path": "interest_123-015.json",
+        "batch_size": 1,
+        "request_delay": 1,
+        "retry_delay": 5
     }
-
 ]
