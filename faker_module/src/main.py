@@ -18,7 +18,7 @@ class FakerModule:
         self.config = config
         locale = config.get('locale', 'en_US') 
         if locale not in AVAILABLE_LOCALES:
-            raise ValueError(f"Locale '{locale}' no es soportado por Faker.") # Obtener el locale de la configuración, por defecto 'en_US'
+            raise ValueError(f"Locale '{locale}' no es soportado por Faker.")
         self.faker = Faker(locale)  # Configurar Faker con el locale especificado
 
         # Manejar la colección base
@@ -27,16 +27,35 @@ class FakerModule:
 
         self.properties_set = config['propertiesSet']
         self.properties_type_set = config['propertiesTypeSet']
-        self.unique_values = {}
+        self.unique_values = {}      # Diccionario para almacenar listas de valores únicos pre-generados
+        self.unique_indices = {}     # Diccionario para rastrear el índice actual en cada lista de valores únicos
 
-        # Inicializar IDs únicos para intDesignerUserId si es necesario
-        self.used_user_ids = set()
-        user_id_config = self.properties_set.get('intDesignerUserId', '')
-        self.user_id_min, self.user_id_max = self.parse_min_max(user_id_config)
-        if self.user_id_min is None:
-            self.user_id_min = 0
-        if self.user_id_max is None:
-            self.user_id_max = 1000000
+        # Identificar y pre-generar valores únicos para campos configurados como únicos
+        self.pre_generate_unique_values()
+
+    def pre_generate_unique_values(self):
+        """
+        Identifica los campos únicos en la configuración y pre-genera sus valores únicos.
+        """
+        for parent_field, fields in self.properties_set.items():
+            for field, field_config in fields.items():
+                if isinstance(field_config, str):
+                    config_parsed = self.parse_config(field_config)
+                    if config_parsed.get('unique', False):
+                        if config_parsed.get('type') != 'int':
+                            raise ValueError(f"Actualmente, solo se soportan campos únicos de tipo 'int'. Campo '{field}' tiene tipo '{config_parsed.get('type')}'.")
+                        min_val = config_parsed.get('min', 0)
+                        max_val = config_parsed.get('max', 100)
+                        total_unique = self.config.get('total', 1)
+
+                        range_size = max_val - min_val + 1
+                        if total_unique > range_size:
+                            raise ValueError(f"El rango para el campo '{field}' ({min_val} a {max_val}) no es suficiente para generar {total_unique} valores únicos.")
+
+                        print(f"Generando {total_unique} valores únicos para el campo '{field}' en el rango {min_val} a {max_val}.")
+                        unique_ids = random.sample(range(min_val, max_val + 1), total_unique)
+                        self.unique_values[field] = unique_ids
+                        self.unique_indices[field] = 0
 
     def parse_min_max(self, field_config):
         # Extraer valores min y max de la configuración
@@ -66,47 +85,48 @@ class FakerModule:
             return random.choice(values_for_field)
         return None  # Si no hay valores disponibles para esa clave
 
-    def generate_unique_user_id(self):
-        # Generar un ID único para intDesignerUserId
-        while True:
-            user_id = random.randint(self.user_id_min, self.user_id_max)
-            if user_id not in self.used_user_ids:
-                self.used_user_ids.add(user_id)
-                return user_id
-
     def generate_unique_value(self, field, config):
-        unique_values_set = self.unique_values.setdefault(field, set())
-        max_attempts = 10000  # Evitar loops infinitos
+        """
+        Asigna un valor único pre-generado para el campo.
+        """
+        if field not in self.unique_values:
+            raise ValueError(f"El campo '{field}' no tiene valores únicos pre-generados.")
 
-        for _ in range(max_attempts):
-            value = self.generate_single_value(config, context={})
-            if value not in unique_values_set:
-                unique_values_set.add(value)
-                return value
-        raise ValueError(f"No se pudo generar un valor único para el campo '{field}' después de {max_attempts} intentos.")
+        if self.unique_indices[field] >= len(self.unique_values[field]):
+            raise ValueError(f"Se han agotado los valores únicos para el campo '{field}'.")
+
+        value = self.unique_values[field][self.unique_indices[field]]
+        self.unique_indices[field] += 1
+
+        if self.unique_indices[field] % 10000 == 0:
+            print(f"Se han asignado {self.unique_indices[field]} valores únicos para el campo '{field}'.")
+
+        return value
+    def get_nested_field_type(self, parent_field, sub_field):
+        # Obtener el tipo de campo anidado desde properties_type_set
+        nested_types = self.properties_type_set.get(parent_field, {})
+        if isinstance(nested_types, list) and len(nested_types) > 0:
+            nested_types = nested_types[0]  # Asumiendo que es una lista de un dict
+        return nested_types.get(sub_field, 'str')
 
     def generate_field(self, field, field_config, field_type, context, properties_type_set):
         # Manejar arreglos heterogéneos
+        if field == 'intSubTypeName':
+            config = {'generator': 'subtype'}
+            return self.generate_single_value(config, context)
         if isinstance(field_config, dict) and 'array_elements' in field_config:
             array_elements = []
-            element_types = []
+            element_configs = field_config['array_elements']
             
-            # Obtener los tipos de los elementos desde properties_type_set
-            if isinstance(properties_type_set.get(field, {}), dict):
-                element_types = properties_type_set[field].get('element_types', [])
-            
-            for idx, element_config_str in enumerate(field_config['array_elements']):
-                element_config = self.parse_config(element_config_str)
-                
-                # Obtener el tipo de elemento correspondiente
-                if idx < len(element_types):
-                    element_type = element_types[idx]
-                else:
-                    element_type = 'str'  # Tipo predeterminado si no está especificado
-                
-                element_config['field_type'] = element_type
-                value = self.generate_single_value(element_config, context)
-                array_elements.append(value)
+            for element_config_dict in element_configs:
+                # Cada element_config_dict es un diccionario con subcampos y sus generadores
+                element = {}
+                for sub_field, sub_generator_str in element_config_dict.items():
+                    sub_field_type = self.get_nested_field_type(field, sub_field)
+                    # Generar el valor para el subcampo
+                    sub_value = self.generate_field(sub_field, sub_generator_str, sub_field_type, context, properties_type_set)
+                    element[sub_field] = sub_value
+                array_elements.append(element)
             
             return array_elements
         else:
@@ -156,9 +176,9 @@ class FakerModule:
         elif element_type == 'int':
             min_value = config.get('min', 0)
             max_value = config.get('max', 100)
-            return str(random.randint(min_value, max_value))  # Convertir a cadena si se va a concatenar
+            return random.randint(min_value, max_value)
         elif element_type == 'float':
-            return str(random.uniform(0, 100))  # Convertir a cadena si se va a concatenar
+            return round(random.uniform(0, 100), config.get('right_digits', 2))
         elif element_type == 'url':
             return self.faker.url()
         elif element_type == 'date':
@@ -178,91 +198,41 @@ class FakerModule:
             else:
                 return None
         elif generator == 'random':
-            if value_type == 'username':
+            if value_type == 'user_name':
                 return self.faker.user_name()
-            elif value_type == 'password':
-                return self.faker.password()
+            elif value_type == 'first_name':
+                return self.faker.first_name()
+            elif value_type == 'last_name':
+                return self.faker.last_name()
             elif value_type == 'email':
                 return self.faker.email()
-            elif value_type == 'phone':
+            elif value_type == 'phone_number':
                 return self.faker.phone_number()
-            elif value_type == 'ethAddress':
-                return self.faker.sha256()
-            elif value_type == 'nemotecnic':
-                return self.faker.sentence()
-            elif value_type == 'pin':
-                return str(random.randint(1000, 9999))
-            elif value_type == 'name':
-                return self.faker.first_name()
-            elif value_type == 'lastName':
-                return self.faker.last_name()
-            elif value_type == 'date_of_birth':
-                return self.faker.date_of_birth().isoformat()
-            elif value_type == 'dni':
-                return self.generate_spanish_nif()
-            elif value_type == 'gender':
-                return random.choice(['masculino', 'femenino'])
-            elif value_type == 'city':
-                return self.faker.city()
-            elif value_type == 'state':
-                return self.faker.state()
-            elif value_type == 'country':
-                return self.faker.country()
-            elif value_type == 'street_address':
-                return self.faker.street_address()
-            elif value_type == 'latitude':
-                return str(self.faker.latitude())
-            elif value_type == 'longitude':
-                return str(self.faker.longitude())
-            elif value_type == 'building_number':
-                return self.faker.building_number()
-            elif value_type == 'company':
-                return self.faker.company()
-            elif value_type == 'paragraph':
-                return self.faker.paragraph()
-            elif value_type == 'sentence':
-                return self.faker.sentence()
             elif value_type == 'url':
                 return self.faker.url()
-
-            elif value_type == 'tax_id':
-                return self.generate_tax_id()
-            elif value_type == 'license_number':
-                return self.faker.bothify(text='???-####')
-            elif value_type == 'date_past':
-                return self.faker.past_date().isoformat()
-            elif value_type == 'date_future':
-                return self.faker.future_date().isoformat()
-            elif value_type == 'organization_type':
-                return random.choice([
-                    'organización benéfica',
-                    'persona jurídica',
-                    'personas naturales',
-                    'organizaciones sin fines de lucro',
-                    'organizaciones gubernamentales'
-                ])
-            elif value_type == 'int':
-                min_value = config.get('min', 0)
-                max_value = config.get('max', 100)
-                return random.randint(min_value, max_value)
+            elif value_type == 'sentence':
+                return self.faker.sentence()
             elif value_type == 'word':
                 return self.faker.word()
-            elif value_type == 'contract_code':
-                return self.faker.bothify(text='CT-#####')
-            elif value_type == 'digital_signature':
-                return self.faker.sha256()
-            elif value_type == 'transaction_id':
-                return self.faker.uuid4()
-           
-            elif value_type == 'file_name':
-                extension = config.get('extension')
-                if extension is None:
-                    extension_from = config.get('extension_from')
-                    if extension_from and extension_from in context:
-                        extension = context[extension_from]
-                return self.faker.file_name(extension=extension)
-            elif value_type == 'file_extension':
-                return self.faker.file_extension()
+            elif value_type == 'job_title':
+                return self.faker.job()
+            elif value_type == 'float':
+                min_val = config.get('min', 0.0)
+                max_val = config.get('max', 100.0)
+                return round(random.uniform(min_val, max_val), 2)
+            elif value_type == 'int':
+                min_val = config.get('min', 0)
+                max_val = config.get('max', 100)
+                return random.randint(min_val, max_val)
+            elif value_type == 'date':
+                return self.faker.date()  # Corrección aplicada aquí
+            elif value_type == 'choice_values':
+                # Manejar valores de elección pasados de forma diferente
+                values = config.get('values', [])
+                if values:
+                    return random.choice(values)
+                else:
+                    return None
             else:
                 # Si no se especifica un tipo conocido, intenta obtener un valor de la colección base
                 value_from_base = self.get_random_from_base(value_type)
@@ -272,6 +242,9 @@ class FakerModule:
                     return self.faker.word()
         elif generator == 'pyfloat':
             return self.generate_pyfloat(config)
+        elif generator == 'subtype':
+            type_name = context.get('intTypeName', 'otro')
+            return self.generate_subtype_name(type_name)
         else:
             # Generación de valor predeterminado basado en el tipo de campo
             if field_type == 'str':
@@ -279,9 +252,9 @@ class FakerModule:
             elif field_type == 'int':
                 return random.randint(0, 100)
             elif field_type == 'float':
-                return random.uniform(0, 100)
+                return round(random.uniform(0, 100), 2)
             elif field_type == 'date':
-                return self.faker.date().isoformat()
+                return self.faker.date()  # Corrección aplicada aquí también si es necesario
             else:
                 return self.faker.word()
 
@@ -311,6 +284,16 @@ class FakerModule:
             config['values'] = None  # Nuevo parámetro para valores predefinidos
             config['extension_from'] = None
             config['unique'] = False
+            # Lista de tipos conocidos
+            known_types = [
+                'username', 'password', 'email', 'phone', 'ethAddress',
+                'nemotecnic', 'pin', 'name', 'lastName', 'date_of_birth',
+                'dni', 'gender', 'city', 'state', 'country', 'street_address',
+                'latitude', 'longitude', 'building_number', 'company',
+                'paragraph', 'sentence', 'url', 'file_name', 'tax_id',
+                'license_number', 'date_past', 'date_future', 'organization_type',
+                'int', 'word', 'contract_code', 'digital_signature', 'transaction_id', 'file_extension'
+            ]
             i = 0
             while i < len(parts):
                 part = parts[i]
@@ -326,19 +309,17 @@ class FakerModule:
                         if next_part == 'choice':
                             config['generator'] = 'choice'
                             i += 1
-                        elif next_part in ['username', 'password', 'email', 'phone', 'ethAddress',
-                                           'nemotecnic', 'pin', 'name', 'lastName', 'date_of_birth',
-                                           'dni', 'gender', 'city', 'state', 'country', 'street_address',
-                                           'latitude', 'longitude', 'building_number', 'company',
-                                           'paragraph', 'sentence', 'url', 'file_name', 'tax_id',
-                                           'license_number', 'date_past', 'date_future', 'organization_type',
-                                           'int', 'word', 'contract_code', 'digital_signature', 'transaction_id', 'file_extension']:
+                        elif next_part in known_types:
                             config['type'] = next_part
                             i += 1
                 elif part == 'choice':
                     config['generator'] = 'choice'
                     i += 1
                 
+                elif part in known_types:
+                    config['type'] = part
+                    i += 1
+
                 elif part.startswith('extension_from='):
                     extension_field = part.split('=', 1)[1]
                     config['extension_from'] = extension_field
@@ -413,6 +394,7 @@ class FakerModule:
                             break
 
                 else:
+                    # Si no se reconoce el part, saltar
                     i += 1
         return config
 
@@ -420,11 +402,14 @@ class FakerModule:
         data_list = []
         total = self.config.get('total', 1)
         
-        for _ in range(total):
+        for idx in range(total):
             context = {}  # Inicializamos el contexto para cada registro
-            data = self.generate_nested_data(self.properties_set, self.properties_type_set, context)
-            data_list.append(data)
-        
+            try:
+                data = self.generate_nested_data(self.properties_set, self.properties_type_set, context)
+                data_list.append(data)
+            except ValueError as ve:
+                print(f"Error en el registro {idx + 1}: {ve}")
+                break  # Detener la generación si se encuentra un error
         return data_list
 
     def generate_nested_data(self, properties_set, properties_type_set, context):
@@ -462,6 +447,14 @@ class FakerModule:
         letters = 'TRWAGMYFPDXBNJZSQVHLCKE'
         letter = letters[number % 23]
         return f"{number_str}{letter}"
+    
+    def generate_subtype_name(self, type_name):
+        subtypes = {
+            'vivienda': ['casa', 'apartamento', 'estudio', 'cabaña', 'villa', 'chalet'],
+            'vehiculo': ['coche', 'motocicleta', 'camioneta', 'furgoneta', 'autobús']
+        }
+        return random.choice(subtypes.get(type_name, ['otro']))
+
 
 # Ejecutar el módulo
 def main():
@@ -471,7 +464,11 @@ def main():
         config = json.load(f)
     
     faker_module = FakerModule(config)
-    generated_data = faker_module.generate_data()
+    try:
+        generated_data = faker_module.generate_data()
+    except ValueError as ve:
+        print(f"Error durante la generación de datos: {ve}")
+        return
 
     # Guardar los datos generados en el archivo especificado en la configuración
     output_file = config.get('outputFile', '../output/generated_data.json')  # Valor por defecto si no está definido
