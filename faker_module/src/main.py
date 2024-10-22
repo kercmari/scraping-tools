@@ -38,24 +38,41 @@ class FakerModule:
         Identifica los campos únicos en la configuración y pre-genera sus valores únicos.
         """
         for parent_field, fields in self.properties_set.items():
-            for field, field_config in fields.items():
-                if isinstance(field_config, str):
-                    config_parsed = self.parse_config(field_config)
-                    if config_parsed.get('unique', False):
-                        if config_parsed.get('type') != 'int':
-                            raise ValueError(f"Actualmente, solo se soportan campos únicos de tipo 'int'. Campo '{field}' tiene tipo '{config_parsed.get('type')}'.")
-                        min_val = config_parsed.get('min', 0)
-                        max_val = config_parsed.get('max', 100)
-                        total_unique = self.config.get('total', 1)
+            if isinstance(fields, dict):
+                # Si fields es un diccionario
+                for field, field_config in fields.items():
+                    self.handle_field_unique_values(parent_field, field, field_config)
+            elif isinstance(fields, list):
+                # Si fields es una lista de diccionarios
+                for item in fields:
+                    if isinstance(item, dict):
+                        for field, field_config in item.items():
+                            self.handle_field_unique_values(parent_field, field, field_config)
+            else:
+                # Otros tipos, puedes manejar según sea necesario o simplemente omitir
+                continue
 
-                        range_size = max_val - min_val + 1
-                        if total_unique > range_size:
-                            raise ValueError(f"El rango para el campo '{field}' ({min_val} a {max_val}) no es suficiente para generar {total_unique} valores únicos.")
+    def handle_field_unique_values(self, parent_field, field, field_config):
+        """
+        Maneja la pre-generación de valores únicos para un campo específico.
+        """
+        if isinstance(field_config, str):
+            config_parsed = self.parse_config(field_config)
+            if config_parsed.get('unique', False):
+                if config_parsed.get('type') != 'int':
+                    raise ValueError(f"Actualmente, solo se soportan campos únicos de tipo 'int'. Campo '{field}' tiene tipo '{config_parsed.get('type')}'.")
+                min_val = config_parsed.get('min', 0)
+                max_val = config_parsed.get('max', 100)
+                total_unique = self.config.get('total', 1)
 
-                        print(f"Generando {total_unique} valores únicos para el campo '{field}' en el rango {min_val} a {max_val}.")
-                        unique_ids = random.sample(range(min_val, max_val + 1), total_unique)
-                        self.unique_values[field] = unique_ids
-                        self.unique_indices[field] = 0
+                range_size = max_val - min_val + 1
+                if total_unique > range_size:
+                    raise ValueError(f"El rango para el campo '{field}' ({min_val} a {max_val}) no es suficiente para generar {total_unique} valores únicos.")
+
+                print(f"Generando {total_unique} valores únicos para el campo '{field}' en el rango {min_val} a {max_val}.")
+                unique_ids = random.sample(range(min_val, max_val + 1), total_unique)
+                self.unique_values[field] = unique_ids
+                self.unique_indices[field] = 0
 
     def parse_min_max(self, field_config):
         # Extraer valores min y max de la configuración
@@ -102,6 +119,7 @@ class FakerModule:
             print(f"Se han asignado {self.unique_indices[field]} valores únicos para el campo '{field}'.")
 
         return value
+
     def get_nested_field_type(self, parent_field, sub_field):
         # Obtener el tipo de campo anidado desde properties_type_set
         nested_types = self.properties_type_set.get(parent_field, {})
@@ -324,7 +342,8 @@ class FakerModule:
                     extension_field = part.split('=', 1)[1]
                     config['extension_from'] = extension_field
                     i += 1
-                elif part.startswith('values='):
+                elif part.startswith('values=') or part.startswith('choice_values='):
+                    # Manejar tanto 'values=' como 'choice_values='
                     values_str = part.split('=', 1)[1]
                     # Eliminar comillas si están presentes
                     if values_str.startswith(("'", '"')) and values_str.endswith(("'", '"')):
@@ -332,6 +351,7 @@ class FakerModule:
                     # Dividir los valores por coma y eliminar espacios en blanco
                     values_list = [v.strip() for v in values_str.split(',')]
                     config['values'] = values_list
+                    config['generator'] = 'choice'  # Establecer el generador como 'choice'
                     i += 1
                 elif part == 'array':
                     config['is_array'] = True
@@ -425,7 +445,19 @@ class FakerModule:
                     nested_properties_set = field_config
                     nested_properties_type_set = properties_type_set.get(field, {})
                     data[field] = self.generate_nested_data(nested_properties_set, nested_properties_type_set, context)
+            elif isinstance(field_config, list):
+                # Campo es una lista de objetos
+                data[field] = []
+                for item_config in field_config:
+                    if isinstance(item_config, dict):
+                        item_type_set = properties_type_set.get(field, [{}])[0]  # Obtener el tipo del primer elemento
+                        item = self.generate_nested_data(item_config, item_type_set, context)
+                        data[field].append(item)
+                    else:
+                        # Manejar elementos que no son dicts si es necesario
+                        continue
             else:
+                # Campo es un valor simple
                 data[field] = self.generate_field(field, field_config, field_type, context, properties_type_set)
                 context[field] = data[field]  # Agregar el campo al contexto
         return data
@@ -453,8 +485,9 @@ class FakerModule:
             'vivienda': ['casa', 'apartamento', 'estudio', 'cabaña', 'villa', 'chalet'],
             'vehiculo': ['coche', 'motocicleta', 'camioneta', 'furgoneta', 'autobús']
         }
-        return random.choice(subtypes.get(type_name, ['otro']))
-
+        # Convertir el nombre del tipo a minúsculas para asegurar coincidencia
+        type_name_lower = type_name.lower()
+        return random.choice(subtypes.get(type_name_lower, ['otro']))
 
 # Ejecutar el módulo
 def main():
