@@ -1,0 +1,422 @@
+[
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 717
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 521
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 650
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 136
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 261
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 651
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 604
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 510
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 615
+    },
+    {
+        "_id": "0UpMGVwAdG",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 91
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 467
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 275
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 474
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 373
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 7
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 65
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 816
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 858
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 373
+    },
+    {
+        "_id": "vVVg1hUhYR",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 722
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 427
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 686
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 975
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 952
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 375
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 647
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 23
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 97
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 721
+    },
+    {
+        "_id": "a0RVKlQa16",
+        "category": "Hospedaje",
+        "activity": "Caba\u00f1a",
+        "price": 374
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 823
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 106
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 931
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 274
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 985
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 629
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 197
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 146
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 913
+    },
+    {
+        "_id": "AlcceBBg7F",
+        "category": "Transporte",
+        "activity": "Hotel",
+        "price": 198
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 203
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 976
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 818
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 370
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 36
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 44
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 683
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 214
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 859
+    },
+    {
+        "_id": "R7vjXneQd7",
+        "category": "Deportes",
+        "activity": "Atletismo",
+        "price": 900
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 549
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 826
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 226
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 355
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 68
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 282
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 703
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 510
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 140
+    },
+    {
+        "_id": "lHsEa4IjdZ",
+        "category": "Hoteleria",
+        "activity": "Atletismo",
+        "price": 195
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 425
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 746
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 623
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 657
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 823
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 793
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 19
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 164
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 383
+    },
+    {
+        "_id": "jbs2a1GHOr",
+        "category": "Deporte",
+        "activity": "Atletismo",
+        "price": 438
+    }
+]

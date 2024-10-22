@@ -1,40 +1,23 @@
 {
     "locale": "es_ES",
-    "total": 150000,
-    "collection": "",
-    "outputFile": "../output/designer.json",
+    "total": 1144,
+    "collection": "../data/interest_84_1.json",
+    "outputFile": "../output/interest_84_1.json",
     "propertiesSet": {
-        "designer": {
-            "designerUserId": "random unique int min=0 max=3000000",
-            "designerName": "random name",
-            "designerGender": "choice values='masculino, femenino'",
-            "designerPreferences": "choice values='minimalista, moderno, clásico, vanguardista'",
-            "event": "random int min=1 max=100",
-            "user": "random int min=1 max=10000",
-            "experience": "random sentence",
-            "portfolio": {
-                "array_elements": [
-                    "random word",
-                    "random word"
-                ]
-            }
-        }
+            "intUsername": "reference users.usrName",
+            "intUserPreferences": "random",
+            "intInvAmount": "int min=500 max=1000000",
+            "intTracRiskLevel": "choice_values='bajo, medio, alto'",
+            "intInvPerformance": "float min=0 max=100"
+        
     },
     "propertiesTypeSet": {
-        "designer": {
-            "designerUserId": "int",
-            "designerName": "str",
-            "designerGender": "str",
-            "designerPreferences": "str",
-            "event": "int",
-            "user": "int",
-            "experience": "str",
-            "portfolio": {
-                "element_types": [
-                    "str",
-                    "str"
-                ]
-            }
+        "Investment": {
+            "intUsername": "str",
+            "intUserPreferences": "str",
+            "intInvAmount": "int",
+            "intTracRiskLevel": "str",
+            "intInvPerformance": "float"
         }
     }
 }

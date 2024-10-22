@@ -1,64 +1,42 @@
 {
-    "json_data_path": "data/result.json",
-    "output_data_path": "interest_123-015.json",
+    "json_data_path": "data/interest_84_1.json",
+    "output_data_path": "output_investment_preferences.json",
     "required_keys": [
-        "intCtProductName",
-        "intMaProductPrice",
-        "intMaSalesAmount",
-        "intDsGen",
-        "intDsAge",
-        "intDsClicks",
-        "intDsComments"
+        "intUsername",
+        "intUserPreferences",
+        "intInvAmount",
+        "intTracRiskLevel",
+        "intInvPerformance"
     ],
     "key_types": {
-        "intCtProductName": "str",
-        "intMaProductPrice": "float",
-        "intMaSalesAmount": "int",
-        "intDsGen": "str",
-        "intDsAge": "int",
-        "intDsClicks": "int",
-        "intDsComments": "int"
+        "intUsername": "str",
+        "intUserPreferences": "str",
+        "intInvAmount": "float",
+        "intTracRiskLevel": "str",
+        "intInvPerformance": "float"
     },
     "empty_allowed_keys": [],
     "separator": ",",
     "random_values": {
-        "intCtProductName": [
-            "Blouse",
-            "Shirt",
-            "Jacket",
-            "Skirt",
-            "Dress"
+        "intUserPreferences": [
+            "Corto plazo",
+            "Medio plazo",
+            "Largo plazo"
         ],
-        "intDsGen": [
-            "Male",
-            "Female",
-            "Other"
+        "intTracRiskLevel": [
+            "bajo",
+            "medio",
+            "alto"
         ]
     },
-    "random_number_ranges": {
-        "intMaProductPrice": [
-            10,
-            200
-        ],
-        "intMaSalesAmount": [
-            1,
-            50
-        ],
-        "intDsAge": [
-            18,
-            70
-        ],
-        "intDsClicks": [
-            0,
-            45
-        ],
-        "intDsComments": [
-            0,
-            15
-        ]
+    "value_ranges": {
+        "intInvAmount": {
+            "min": 500,
+            "max": 10000000
+        }
     },
-    "max_empty_keys": 1,
     "key_char_limits": {
-        "intCtProductName": 100
-    }
+        "intUsername": 100
+    },
+    "max_empty_keys": 1
 }

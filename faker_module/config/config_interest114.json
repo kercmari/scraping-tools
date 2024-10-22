@@ -1,0 +1,48 @@
+{
+    "locale": "es_ES",
+    "total": 250000,
+    "collection": "",
+    "outputFile": "../output/interest.json",
+    "propertiesSet": {
+        "interest": {
+            "intUserName": "random user_name",
+            "intSimName": "random sentence",
+            "intCouDescription": "random paragraph",
+            "intCouDifficulty": "random int min=1 max=5",
+            "intCouCategory": "choice values='Liderazgo, Comunicación, Gestión, Desarrollo Personal, Estrategia'",
+            "intCouName": "random sentence",
+            "intMetDate": "random datetime",
+            "intMetVoiceText": "random sentence",
+            "intMetAct": "choice values='Positivo, Negativo, Neutro'",
+            "intMetVoiceFrequency": {
+                "array_elements": [
+                    "random int min=0 max=100",
+                    "random int min=0 max=100",
+                    "random int min=0 max=100",
+                    "random int min=0 max=100",
+                    "random int min=0 max=100"
+                ]
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "interest": {
+            "intUserName": "str",
+            "intSimName": "str",
+            "intCouDescription": "str",
+            "intCouDifficulty": "int",
+            "intCouCategory": "str",
+            "intCouName": "str",
+            "intMetDate": "datetime",
+            "intMetVoiceText": "str",
+            "intMetAct": "str",
+            "intMetVoiceFrequency": [
+                "int",
+                "int",
+                "int",
+                "int",
+                "int"
+            ]
+        }
+    }
+}

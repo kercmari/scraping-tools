@@ -1,0 +1,51 @@
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/simulations.json",
+    "propertiesSet": {
+        "simulations": {
+            "simName": "random sentence",
+            "simModuleId": "random object_id",
+            "simDescription": "random paragraph",
+            "simScenery": "choice values='entrevista, oficina, sala de conferencias, virtual'",
+            "simParameters": {
+                "difficulty": "choice values='facil, medio, dificil'",
+                "timeLimit": "random int min=5 max=60"
+            },
+            "simResults": {
+                "array_elements": [
+                    {
+                        "userId": "random object_id",
+                        "score": "random int min=0 max=100",
+                        "time": "random int min=1 max=60"
+                    },
+                    {
+                        "userId": "random object_id",
+                        "score": "random int min=0 max=100",
+                        "time": "random int min=1 max=60"
+                    }
+                ]
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "simulations": {
+            "simName": "str",
+            "simModuleId": "object_id",
+            "simDescription": "str",
+            "simScenery": "str",
+            "simParameters": {
+                "difficulty": "str",
+                "timeLimit": "int"
+            },
+            "simResults": [
+                {
+                    "userId": "object_id",
+                    "score": "int",
+                    "time": "int"
+                }
+            ]
+        }
+    }
+}

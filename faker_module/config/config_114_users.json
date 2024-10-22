@@ -1,0 +1,62 @@
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/users.json",
+    "propertiesSet": {
+        "users": {
+            "username": "random user_name",
+            "userPassword": "random hashed_password",
+            "userEmail": "random email",
+            "userType": "choice values='usuario, admin'",
+            "userPreferences": {
+                "theme": "choice values='dark, light'",
+                "notifications": "random boolean"
+            },
+            "userCompletedCoursesId": {
+                "array_elements": [
+                    "random object_id",
+                    "random object_id"
+                ]
+            },
+            "userProgress": {
+                "course1": "random int min=0 max=100",
+                "course2": "random int min=0 max=100"
+            },
+            "userBasicData": {
+                "fullName": "random name",
+                "dateBirth": "random date",
+                "gender": "choice values='male, female, other'",
+                "country": "random country_code"
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "users": {
+            "username": "str",
+            "userPassword": "str",
+            "userEmail": "str",
+            "userType": "str",
+            "userPreferences": {
+                "theme": "str",
+                "notifications": "bool"
+            },
+            "userCompletedCoursesId": {
+                "element_types": [
+                    "object_id",
+                    "object_id"
+                ]
+            },
+            "userProgress": {
+                "course1": "int",
+                "course2": "int"
+            },
+            "userBasicData": {
+                "fullName": "str",
+                "dateBirth": "date",
+                "gender": "str",
+                "country": "str"
+            }
+        }
+    }
+}

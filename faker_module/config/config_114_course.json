@@ -1,0 +1,34 @@
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/courses.json",
+    "propertiesSet": {
+        "courses": {
+            "couName": "random sentence",
+            "couDescription": "random paragraph",
+            "couModulesId": {
+                "array_elements": [
+                    "random object_id",
+                    "random object_id"
+                ]
+            },
+            "couDifficulty": "random int min=1 max=5",
+            "couCategory": "choice values='Liderazgo, Comunicación, Gestión, Desarrollo Personal, Estrategia'"
+        }
+    },
+    "propertiesTypeSet": {
+        "courses": {
+            "couName": "str",
+            "couDescription": "str",
+            "couModulesId": {
+                "element_types": [
+                    "object_id",
+                    "object_id"
+                ]
+            },
+            "couDifficulty": "int",
+            "couCategory": "str"
+        }
+    }
+}

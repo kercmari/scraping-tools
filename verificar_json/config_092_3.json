@@ -1,0 +1,44 @@
+{
+    "json_data_path": "data/1728041144084.json",
+    "output_data_path": "092_interest_3.json",
+    "required_keys": [
+        "intUserName",
+        "intuserPrefProvider",
+        "intProvName",
+        "intProvLocation",
+        "intprovType"
+    ],
+    "key_types": {
+        "intUserName": "str",
+        "intuserPrefProvider": "str",
+        "intProvName": "str",
+        "intProvLocation": "str",
+        "intprovType": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "intuserPrefProvider": [
+            "Producto",
+            "Propiedad",
+            "Envíos"
+        ],
+        "intprovType": [
+            "Producto",
+            "Propiedad",
+            "Envíos"
+        ],
+        "intProvLocation": [
+            "Nueva York",
+            "Los Ángeles",
+            "Ciudad de México",
+            "Madrid",
+            "Buenos Aires"
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "intProvName": 150,
+        "intProvLocation": 100
+    }
+}

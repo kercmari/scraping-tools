@@ -1,0 +1,72 @@
+{
+    "json_data_path": "data/1728038991457.json",
+    "output_data_path": "092_interest_2.json",
+    "required_keys": [
+        "intUserName",
+        "intUserPrefProperties",
+        "intTypeName",
+        "intSubTypeName",
+        "intPrtTitle",
+        "intPrtDescription",
+        "intPrtPrice",
+        "intPrtLocationCity",
+        "intPrtLocationCountry"
+    ],
+    "key_types": {
+        "intUserName": "str",
+        "intuserPrefProperties": "str",
+        "intTypeName": "str",
+        "intSubTypeName": "str",
+        "intPrtTitle": "str",
+        "intPrtDescription": "str",
+        "intPrtPrice": "float",
+        "intPrtLocationCity": "str",
+        "intPrtLocationCountry": "str"
+    },
+    "empty_allowed_keys": [],
+    "separator": ",",
+    "random_values": {
+        "intTypeName": [
+            "vivienda",
+            "vehículo"
+        ],
+        "intSubTypeName": [
+            "casa",
+            "apartamento",
+            "estudio",
+            "cabaña",
+            "villa",
+            "chalet",
+            "coche",
+            "motocicleta",
+            "camioneta",
+            "furgoneta",
+            "autobús"
+        ],
+        "intPrtLocationCountry": [
+            "Estados Unidos",
+            "México",
+            "España",
+            "Argentina",
+            "Colombia"
+        ],
+        "intPrtLocationCity": [
+            "Nueva York",
+            "Ciudad de México",
+            "Madrid",
+            "Buenos Aires",
+            "Bogotá"
+        ]
+    },
+    "random_number_ranges": {
+        "intPrtPrice": [
+            50,
+            1000
+        ]
+    },
+    "max_empty_keys": 1,
+    "key_char_limits": {
+        "intPrtTitle": 100,
+        "intPrtDescription": 500
+    }
+}

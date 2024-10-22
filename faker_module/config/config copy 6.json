@@ -1,0 +1,36 @@
+{
+    "locale": "es_ES",
+    "total": 200000,
+    "collection": "",
+    "outputFile": "../output/clients.json",
+    "propertiesSet": {
+        "clients": {
+            "cliName": "name",
+            "cliCompany": "company",
+            "cliEmail": "email",
+            "cliPhone": "phone_number",
+            "cliNote": "sentence",
+            "cliHistoryInteration": [
+                {
+                    "interationType": "choice_values='llamada, correo, reunión'",
+                    "interationDate": "date"
+                }
+            ]
+        }
+    },
+    "propertiesTypeSet": {
+        "clients": {
+            "cliName": "str",
+            "cliCompany": "str",
+            "cliEmail": "str",
+            "cliPhone": "str",
+            "cliNote": "str",
+            "cliHistoryInteration": [
+                {
+                    "interationType": "str",
+                    "interationDate": "date"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,229 @@
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collections": {
+        "basicData": "../data/basicData.json",
+        "design": "../data/design.json",
+        "transaction": "../data/transaction.json"
+    },
+    "outputFile": "../output/designer.json",
+    "propertiesSet": {
+        "designer": {
+            "designerUserId": "random unique int min=0 max=3000000",
+            "designerName": "random name",
+            "designerGender": "choice values='masculino, femenino'",
+            "designerPreferences": "choice values='minimalista, moderno, clásico, vanguardista'",
+            "event": "random int min=1 max=100",
+            "user": "random int min=1 max=10000",
+            "experience": "random sentence",
+            "portfolio": {
+                "array_elements": [
+                    "random word",
+                    "random word"
+                ]
+            }
+        },
+        "supplier": {
+            "basicData": "pointer:basicData",
+            "design": "pointer:design",
+            "transaction": "pointer:transaction",
+            "type": "choice values='material, factory'"
+        }
+    },
+    "propertiesTypeSet": {
+        "designer": {
+            "designerUserId": "int",
+            "designerName": "str",
+            "designerGender": "str",
+            "designerPreferences": "str",
+            "event": "int",
+            "user": "int",
+            "experience": "str",
+            "portfolio": {
+                "element_types": [
+                    "str",
+                    "str"
+                ]
+            }
+        },
+        "supplier": {
+            "basicData": "pointer",
+            "design": "pointer",
+            "transaction": "pointer",
+            "type": "str"
+        }
+    }
+}
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/supplier.json",
+    "propertiesSet": {
+        "supplier": {
+            "basicData": "random int min=0 max=3000000",
+            "design": "random int min=0 max=3000000",
+            "transaction": "random int min=0 max=3000000",
+            "type": "choice values='material, factory'"
+        }
+    },
+    "propertiesTypeSet": {
+        "supplier": {
+            "basicData": "int",
+            "design": "int",
+            "transaction": "int",
+            "type": "str"
+        }
+    }
+}
+
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/design.json",
+    "propertiesSet": {
+        "design": {
+            "name": "random name",
+            "type": "choice values='industrial, artistic, modern, classic'",
+            "dimensions": "custom_dimensions",
+            "materials": "choice values='wood, metal, plastic, glass'",
+            "styles": "choice values='minimalist, ornate, contemporary, vintage'",
+            "finish": "choice values='matte, glossy, satin, textured'",
+            "images": {
+                "array_elements": [
+                    "random url",
+                    "random url",
+                    "random url"
+                ]
+            },
+            "components": {
+                "array_elements": [
+                    "random word",
+                    "random word",
+                    "random word"
+                ]
+            }
+        }
+    },
+    "propertiesTypeSet": {
+        "design": {
+            "name": "str",
+            "type": "str",
+            "dimensions": "str",
+            "materials": "str",
+            "styles": "str",
+            "finish": "str",
+            "images": {
+                "element_types": [
+                    "str",
+                    "str",
+                    "str"
+                ]
+            },
+            "components": {
+                "element_types": [
+                    "str",
+                    "str",
+                    "str"
+                ]
+            }
+        }
+    }
+}
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/transaction.json",
+    "propertiesSet": {
+        "transaction": {
+            "TransactionAmount": "random float min=10 max=10000",
+            "design": "random uuid",
+            "billing": {
+                "array_elements": [
+                    "random date",
+                    "random sentence"
+                ]
+            },
+            "payment": "choice values='credit_card, paypal, bank_transfer, cash'"
+        }
+    },
+    "propertiesTypeSet": {
+        "transaction": {
+            "TransactionAmount": "float",
+            "design": "pointer",
+            "billing": {
+                "element_types": [
+                    "date",
+                    "str"
+                ]
+            },
+            "payment": "str"
+        }
+    }
+}
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/event.json",
+    "propertiesSet": {
+        "event": {
+            "name": "random sentence",
+            "startDate": "random date",
+            "endDate": "random date",
+            "type": "choice values='conference, workshop, meetup, webinar, seminar'",
+            "description": "random paragraph",
+            "rules": "random sentence",
+            "design": "random uuid"
+        }
+    },
+    "propertiesTypeSet": {
+        "event": {
+            "name": "str",
+            "startDate": "date",
+            "endDate": "date",
+            "type": "str",
+            "description": "str",
+            "rules": "str",
+            "design": "pointer"
+        }
+    }
+}
+{
+    "locale": "es_ES",
+    "total": 150000,
+    "collection": "",
+    "outputFile": "../output/project.json",
+    "propertiesSet": {
+        "project": {
+            "user": "random uuid",
+            "title": "random sentence",
+            "budget": "random float min=1000 max=1000000",
+            "startDate": "random date",
+            "endDate": "random date",
+            "description": "random paragraph",
+            "type": "choice values='research, development, marketing, sales, HR'",
+            "state": "choice values='planning, ongoing, completed, on_hold'",
+            "proDimensionLength": "random float min=10 max=100",
+            "proDimensionWidth": "random float min=10 max=100",
+            "proDimensionHeight": "random float min=10 max=100"
+        }
+    },
+    "propertiesTypeSet": {
+        "project": {
+            "user": "pointer",
+            "title": "str",
+            "budget": "float",
+            "startDate": "date",
+            "endDate": "date",
+            "description": "str",
+            "type": "str",
+            "state": "str",
+            "proDimensionLength": "float",
+            "proDimensionWidth": "float",
+            "proDimensionHeight": "float"
+        }
+    }
+}
